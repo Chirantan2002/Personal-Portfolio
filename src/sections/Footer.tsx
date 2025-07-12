@@ -16,25 +16,25 @@ type FooterLink = {
 const footerLinks: FooterLink[] = [
   {
     title: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/chirantan2002/",
     icon: FaLinkedin,
     hoverColor: "hover:text-blue-500",
   },
   {
     title: "Twitter",
-    href: "#",
+    href: "https://x.com/Chirantan2002",
     icon: FaTwitter,
     hoverColor: "hover:text-sky-400",
   },
   {
     title: "Github",
-    href: "#",
+    href: "https://github.com/Chirantan2002",
     icon: FaGithub,
     hoverColor: "hover:text-gray-300",
   },
   {
     title: "LeetCode",
-    href: "#",
+    href: "https://leetcode.com/u/MoonJar_007/",
     icon: FaTerminal,
     hoverColor: "hover:text-yellow-400",
   },
