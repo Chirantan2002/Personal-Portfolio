@@ -18,7 +18,7 @@ export const Header = () => {
           <a
             key={index}
             onClick={() => scrollToSection(section)}
-            className="nav-item hover:bg-white hover:text-black tracking-wider cursor-pointer tiktok-sans-bold"
+            className="nav-item hover:bg-white hover:text-black cursor-pointer tiktok-sans-bold"
           >
             {section}
           </a>
