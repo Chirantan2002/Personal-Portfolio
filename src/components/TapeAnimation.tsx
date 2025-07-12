@@ -34,7 +34,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 key={idx}
                 className="inline-flex space-x-1 items-center justify-center"
               >
-                <span className="text-white/20 uppercase font-extrabold text-5xl">
+                <span className="text-white/20 uppercase outfit-normal-black text-5xl">
                   {word}
                 </span>
                 <StarIcon className="size-8 text-white/20 " />
@@ -50,7 +50,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 key={idx}
                 className="inline-flex space-x-1 items-center justify-center"
               >
-                <span className="text-white/20 uppercase font-extrabold text-5xl">
+                <span className="text-white/20 uppercase outfit-normal-black text-5xl">
                   {word}
                 </span>
                 <StarIcon className="size-8 text-white/20" />
@@ -66,7 +66,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 key={idx}
                 className="inline-flex space-x-1 items-center justify-center"
               >
-                <span className="text-white/20 uppercase font-extrabold text-5xl">
+                <span className="text-white/20 uppercase outfit-normal-black text-5xl">
                   {word}
                 </span>
                 <StarIcon className="size-8 text-white/20" />
@@ -87,7 +87,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 key={idx}
                 className="inline-flex space-x-1 items-center justify-center"
               >
-                <span className="text-white/20 uppercase font-extrabold text-5xl">
+                <span className="text-white/20 uppercase outfit-normal-black text-5xl">
                   {word}
                 </span>
                 <StarIcon className="size-8 text-white/20 " />
@@ -105,7 +105,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 key={idx}
                 className="inline-flex space-x-1 items-center justify-center"
               >
-                <span className="text-white/20 uppercase font-extrabold text-5xl">
+                <span className="text-white/20 uppercase outfit-normal-black text-5xl">
                   {word}
                 </span>
                 <StarIcon className="size-8 text-white/20" />
@@ -123,7 +123,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 key={idx}
                 className="inline-flex space-x-1 items-center justify-center"
               >
-                <span className="text-white/20 uppercase font-extrabold text-5xl">
+                <span className="text-white/20 uppercase outfit-normal-black text-5xl">
                   {word}
                 </span>
                 <StarIcon className="size-8 text-white/20" />

@@ -12,7 +12,7 @@ export const Card: React.FC<CardProps> = ({ children, className }) => {
     <div>
       <div
         className={twMerge(
-          "bg-gray-800 rounded-3xl relative after:content-[''] after:absolute after:inset-0 z-0 after:z-10 overflow-hidden after:outline-2 after:-outline-offset-2 after:outline-white/20 after:rounded-3xl after:pointer-events-none p-6",
+          "bg-gray-800 rounded-3xl relative after:content-[''] after:absolute after:inset-0 z-0 after:z-10 overflow-clip after:outline-2 after:-outline-offset-2 after:outline-pink-300/20  after:rounded-3xl after:pointer-events-none p-6 card-warpper",
           className
         )}
       >
@@ -22,7 +22,7 @@ export const Card: React.FC<CardProps> = ({ children, className }) => {
             backgroundImage: `url(${GrainImage.src})`,
           }}
         ></div>
-        <div className="relative z-10">{children}</div>
+        <div className="relative z-10 card-content">{children}</div>
       </div>
     </div>
   );

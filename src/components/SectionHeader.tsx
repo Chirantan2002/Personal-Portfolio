@@ -19,7 +19,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       <h2 className="font-serif text-3xl md:text-6xl text-center mt-6">
         {title}
       </h2>
-      <p className="text-center px-10 md:px-0 md:text-lg font-sans text-white/60 mt-4 max-w-md mx-auto">
+      <p className="text-center px-10 md:px-0 md:text-lg playfair-display-normal text-white/60 mt-4 max-w-md mx-auto">
         {about}
       </p>
     </div>

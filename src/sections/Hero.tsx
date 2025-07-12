@@ -7,12 +7,13 @@ import GrainImage from "@/assets/images/grain.jpg";
 import { StarImage } from "@/components/StarImage";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
+import { RiScrollToBottomLine } from "react-icons/ri";
 
 export const HeroSection = () => {
   return (
     <div
-      className="py-32 md:py-48 lg:py-56 relative z-0 overflow-x-clip [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
-      id="home"
+      className="py-28 md:py-44 lg:py-52 relative z-0 overflow-x-clip [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+      id="Home"
     >
       <div className="absolute inset-0 -z-10">
         <div
@@ -72,17 +73,21 @@ export const HeroSection = () => {
           <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
             Building things for fun
           </h1>
-          <p className="mt-4 md:text-lg text-center text-white/60 font-serif tracking-wider">
+          <p className="mt-4 md:text-lg text-center px-3 text-white/60 playfair-display-normal tracking-wider">
             Hi, I'm Chirantan Biswas. I'm a 3rd year student of Jadavpur
             University.
           </p>
+        </div>
+        <div className="fixed opacity-0 md:opacity-[1] md:bottom-4 md:right-4 flex items-center justify-center">
+          <RiScrollToBottomLine className="text-4xl transition duration-300 absolute inset-0 text-emerald-300 blur-md animate-bounce" />
+          <RiScrollToBottomLine className="text-4xl transition duration-300 relative animate-bounce z-0" />
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 mt-8 mx-auto">
           <div className="gap-4 flex flex-col md:flex-row justify-center items-center">
             <button
               className="inline-flex items-center space-x-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer hover:bg-white/10 transition duration-300 tracking-wide font-semibold"
               onClick={() => {
-                const ele = document.getElementById("projects");
+                const ele = document.getElementById("Projects");
                 if (ele) {
                   ele.scrollIntoView({ behavior: "smooth" });
                 }

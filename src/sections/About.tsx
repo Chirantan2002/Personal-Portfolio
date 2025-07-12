@@ -66,7 +66,7 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <div className="pb-20 px-5" id="about">
+    <div className="pb-20 px-5" id="About">
       <div className="container mx-auto">
         <SectionHeader
           eyebrow="About Me"

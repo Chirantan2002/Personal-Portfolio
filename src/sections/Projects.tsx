@@ -73,12 +73,12 @@ export const ProjectSection = () => {
         );
 
   return (
-    <section className="pb-16 lg:py-24 pt-16 md:pt-24" id="projects">
+    <section className="pb-16 lg:py-24 pt-16 md:pt-24" id="Projects">
       <div className="container mx-auto">
         <SectionHeader
           eyebrow="Putting skills into action"
           title="Featured Projects"
-          about="See how I transformed concepts into engaging digital experiences"
+          about="See how I transformed ideas into engaging projects"
         />
         <TapeAnimationComponent words={tapeWords} />
         
@@ -89,8 +89,8 @@ export const ProjectSection = () => {
               onClick={() => setSelectedCategory(category)}
               className={`cursor-pointer px-6 py-2 rounded-full border transition duration-300 ease-in-out ${
                 selectedCategory == category
-                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold border-none"
-                  : "bg-white/10 text-white border-white/20 font-semibold hover:bg-emerald-500 hover:text-slate-900 hover:border-emerald-500"
+                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold tiktok-sans-semibold tracking-wide border-none"
+                  : "bg-white/10 text-white border-white/20 font-semibold tiktok-sans-semibold tracking-wide hover:bg-emerald-500 hover:text-slate-900 hover:border-emerald-500"
               }`}
             >
               {category}
