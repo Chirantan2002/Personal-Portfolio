@@ -41,6 +41,15 @@ html {
   scroll-padding-top: 4rem;
 }
 
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 /* Custom fonts */
 
 .tiktok-sans-normal {

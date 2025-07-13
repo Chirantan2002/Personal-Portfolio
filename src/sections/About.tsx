@@ -10,11 +10,25 @@ import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import ChromeIcon from "@/assets/icons/chrome.svg";
 import GithubIcon from "@/assets/icons/github.svg";
+import { SiPytorch } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { SiNumpy } from "react-icons/si";
+import { SiPandas } from "react-icons/si";
+import { BiLogoTypescript } from "react-icons/bi";
+import { SiMongodb } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+import { RiNextjsFill } from "react-icons/ri";
+import { FaPython } from "react-icons/fa";
 import { CardHeader } from "@/components/CardHeader";
-import { ToolboxItem } from "@/components/ToolboxItem";
+import { ToolboxItem } from "@/components/ToolboxItemTape";
 import { motion } from "framer-motion";
+import HobbyTape from "@/components/HobbyTape";
 
 const toolboxItems = [
+  {
+    title: "NodeJS",
+    iconType: FaNodeJs,
+  },
   {
     title: "Javascript",
     iconType: JsIcon,
@@ -32,6 +46,18 @@ const toolboxItems = [
     iconType: ReactIcon,
   },
   {
+    title: "TypeScript",
+    iconType: BiLogoTypescript,
+  },
+  {
+    title: "NextJs",
+    iconType: RiNextjsFill,
+  },
+  {
+    title: "MongoDB",
+    iconType: SiMongodb,
+  },
+  {
     title: "Chrome",
     iconType: ChromeIcon,
   },
@@ -39,28 +65,25 @@ const toolboxItems = [
     title: "Github",
     iconType: GithubIcon,
   },
-];
-
-const hobbies = [
   {
-    title: "Drawing",
-    emoji: "🎨",
+    title: "Python",
+    iconType: FaPython,
   },
   {
-    title: "Reading",
-    emoji: "📖",
+    title: "Pytorch",
+    iconType: SiPytorch,
   },
   {
-    title: "Photography",
-    emoji: "📷",
+    title: "VSCode",
+    iconType: VscVscode,
   },
   {
-    title: "Listening Music",
-    emoji: "🎵",
+    title: "Numpy",
+    iconType: SiNumpy,
   },
   {
-    title: "Gaming",
-    emoji: "🎮",
+    title: "Pandas",
+    iconType: SiPandas,
   },
 ];
 
@@ -90,11 +113,6 @@ export const AboutSection = () => {
               className="px-6 pt-6"
             />
             <ToolboxItem items={toolboxItems} className="mt-6" />
-            <ToolboxItem
-              items={toolboxItems}
-              className="mt-6"
-              itemWrapperClassName="-translate-x-1/2"
-            />
           </Card>
           <Card className="h-max p-0 flex flex-col">
             <CardHeader
@@ -102,121 +120,7 @@ export const AboutSection = () => {
               description="Explore my interests"
               className="px-6 py-6"
             />
-            {/* 1st ROW */}
-            <div className="flex [mask-image:linear-gradient(to_right,transparent,black_25%,black_80%,transparent)]">
-              <motion.div
-                initial={{ x: "-100%" }}
-                animate={{ x: 0 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="flex h-max space-x-2 p-4"
-              >
-                {hobbies.map((hobby) => (
-                  <div
-                    key={hobby.title}
-                    className="inline-flex items-center px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 w-max space-x-1"
-                  >
-                    <span>{hobby.emoji}</span>
-                    <span className="font-medium text-slate-950">
-                      {hobby.title}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
-              <motion.div
-                initial={{ x: "-100%" }}
-                animate={{ x: 0 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="flex h-max space-x-2 p-4"
-              >
-                {hobbies.map((hobby) => (
-                  <div
-                    key={hobby.title}
-                    className="inline-flex items-center px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 w-max space-x-1"
-                  >
-                    <span>{hobby.emoji}</span>
-                    <span className="font-medium text-slate-950">
-                      {hobby.title}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
-              <motion.div
-                initial={{ x: "-100%" }}
-                animate={{ x: 0 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="flex h-max space-x-2 p-4"
-              >
-                {hobbies.map((hobby) => (
-                  <div
-                    key={hobby.title}
-                    className="inline-flex items-center px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 w-max space-x-1"
-                  >
-                    <span>{hobby.emoji}</span>
-                    <span className="font-medium text-slate-950">
-                      {hobby.title}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* 2nd ROW */}
-            <div className="flex [mask-image:linear-gradient(to_right,transparent,black_25%,black_80%,transparent)]">
-              <motion.div
-                initial={{ x: 0 }}
-                animate={{ x: "-100%" }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="flex h-max space-x-2 p-4"
-              >
-                {hobbies.map((hobby) => (
-                  <div
-                    key={hobby.title}
-                    className="inline-flex items-center px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 w-max space-x-1"
-                  >
-                    <span>{hobby.emoji}</span>
-                    <span className="font-medium text-slate-950">
-                      {hobby.title}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
-              <motion.div
-                initial={{ x: 0 }}
-                animate={{ x: "-100%" }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="flex h-max space-x-2 p-4"
-              >
-                {hobbies.map((hobby) => (
-                  <div
-                    key={hobby.title}
-                    className="inline-flex items-center px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 w-max space-x-1"
-                  >
-                    <span>{hobby.emoji}</span>
-                    <span className="font-medium text-slate-950">
-                      {hobby.title}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
-              <motion.div
-                initial={{ x: 0 }}
-                animate={{ x: "-100%" }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="flex h-max space-x-2 p-4"
-              >
-                {hobbies.map((hobby) => (
-                  <div
-                    key={hobby.title}
-                    className="inline-flex items-center px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 w-max space-x-1"
-                  >
-                    <span>{hobby.emoji}</span>
-                    <span className="font-medium text-slate-950">
-                      {hobby.title}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
+            <HobbyTape />
           </Card>
         </div>
       </div>

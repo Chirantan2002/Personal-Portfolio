@@ -26,7 +26,7 @@ export const TapeSection = () => {
           >
             {words.map((word, idx) => (
               <div key={idx} className="inline-flex space-x-4 items-center">
-                <span className="text-gray-900 uppercase outfit-normal-black text-3xl">
+                <span className="text-gray-900 uppercase font-extrabold text-3xl">
                   {word}
                 </span>
                 <StarIcon className="size-10 text-gray-900 -rotate-12" />
@@ -41,7 +41,7 @@ export const TapeSection = () => {
           >
             {words.map((word, idx) => (
               <div key={idx} className="inline-flex space-x-4 items-center">
-                <span className="text-gray-900 uppercase outfit-normal-black text-3xl">
+                <span className="text-gray-900 uppercase font-extrabold text-3xl">
                   {word}
                 </span>
                 <StarIcon className="size-10 text-gray-900 -rotate-12" />
@@ -56,7 +56,7 @@ export const TapeSection = () => {
           >
             {words.map((word, idx) => (
               <div key={idx} className="inline-flex space-x-4 items-center">
-                <span className="text-gray-900 uppercase outfit-normal-black text-3xl">
+                <span className="text-gray-900 uppercase font-extrabold text-3xl">
                   {word}
                 </span>
                 <StarIcon className="size-10 text-gray-900 -rotate-12" />
