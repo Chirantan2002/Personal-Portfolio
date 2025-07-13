@@ -21,8 +21,8 @@ import { RiNextjsFill } from "react-icons/ri";
 import { FaPython } from "react-icons/fa";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItem } from "@/components/ToolboxItemTape";
-import { motion } from "framer-motion";
 import HobbyTape from "@/components/HobbyTape";
+import { motion } from "framer-motion";
 
 const toolboxItems = [
   {
@@ -87,6 +87,8 @@ const toolboxItems = [
   },
 ];
 
+const MotionCard = motion(Card);
+
 export const AboutSection = () => {
   return (
     <div className="pb-20 px-5" id="About">
@@ -97,7 +99,7 @@ export const AboutSection = () => {
           about="Learn more about who I am, what I do, and what inspires me."
         />
         <div className="mt-20 flex flex-col gap-8">
-          <Card className="h-[320px]">
+          <MotionCard className="h-[320px]">
             <CardHeader
               title="My Reads"
               description="Explore the books that have shaped my understanding of the world."
@@ -105,23 +107,23 @@ export const AboutSection = () => {
             <div className="w-40 mx-auto mt-8 md:mt-0">
               <Image src={BookImage} alt="Book Cover" />
             </div>
-          </Card>
-          <Card className="h-max md:col-span-3">
+          </MotionCard>
+          <MotionCard className="h-max md:col-span-3">
             <CardHeader
               title="My Toolbox"
               description="Technologies & tools that I use"
               className="px-6 pt-6"
             />
             <ToolboxItem items={toolboxItems} className="mt-6" />
-          </Card>
-          <Card className="h-max p-0 flex flex-col">
+          </MotionCard>
+          <MotionCard className="h-max p-0 flex flex-col">
             <CardHeader
               title="Beyond the code"
               description="Explore my interests"
               className="px-6 py-6"
             />
             <HobbyTape />
-          </Card>
+          </MotionCard>
         </div>
       </div>
     </div>

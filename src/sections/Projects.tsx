@@ -80,24 +80,32 @@ export const ProjectSection = () => {
           title="Featured Projects"
           about="See how I transformed ideas into engaging projects"
         />
+        {/* Tape Animation With Words */}
         <TapeAnimationComponent words={tapeWords} />
-        
+        {/* Tape Animation With Words Ends*/}
+
+        {/* Categories Buttons */}
         <div className="flex flex-wrap space-x-5 justify-center mt-8">
           {categories.map((category, index) => (
             <button
+              type="button"
               key={index}
               onClick={() => setSelectedCategory(category)}
-              className={`cursor-pointer px-6 py-2 rounded-full border transition duration-300 ease-in-out ${
+              className={`relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-md group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white outline-none cursor-pointer transition-colors duration-1000 ease-in-out tiktok-sans-black ${
                 selectedCategory == category
-                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold tiktok-sans-semibold tracking-wide border-none"
-                  : "bg-white/10 text-white border-white/20 font-semibold tiktok-sans-semibold tracking-wide hover:bg-emerald-500 hover:text-slate-900 hover:border-emerald-500"
+                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white tracking-wide border-none"
+                  : "bg-white/10 text-white border-white/20 tracking-wide hover:bg-emerald-500 hover:text-slate-900 hover:border-emerald-500"
               }`}
             >
-              {category}
+              <span className="relative px-5 py-2.5 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent tracking-wider">
+                {category}
+              </span>
             </button>
           ))}
         </div>
+        {/* Categories Buttons Ends*/}
 
+        {/* Projects One by One Begins*/}
         <div className="grid grid-cols-1 px-6 justify-items-center md:grid-cols-2 lg:grid-cols-2 gap-16 mt-10 md:gap-20 md:mt-20 relative z-0">
           {filteredProjects.map((project) => (
             <div
@@ -152,6 +160,7 @@ export const ProjectSection = () => {
             </div>
           ))}
         </div>
+        {/* Projects One by One Ends*/}
       </div>
     </section>
   );

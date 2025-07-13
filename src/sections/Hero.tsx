@@ -89,7 +89,11 @@ export const HeroSection = () => {
               onClick={() => {
                 const ele = document.getElementById("Projects");
                 if (ele) {
-                  ele.scrollIntoView({ behavior: "smooth" });
+                  ele.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest",
+                  });
                 }
               }}
             >

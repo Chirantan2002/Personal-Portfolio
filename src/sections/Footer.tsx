@@ -1,10 +1,6 @@
 import React from "react";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-// import GithubFill from "@/assets/icons/github-fill.svg";
-// import LinkedInIcon from "@/assets/icons/linkedin-box-line.svg";
-// import TwitterIcon from "@/assets/icons/twitter-x-line.svg";
-// import TerminalIcon from "@/assets/icons/terminal-box-line.svg";
-import { FaGithub, FaLinkedin, FaTwitter, FaTerminal } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { LuSquareTerminal } from "react-icons/lu";
 
 type FooterLink = {
   title: string;
@@ -35,7 +31,7 @@ const footerLinks: FooterLink[] = [
   {
     title: "LeetCode",
     href: "https://leetcode.com/u/MoonJar_007/",
-    icon: FaTerminal,
+    icon: LuSquareTerminal,
     hoverColor: "hover:text-yellow-400",
   },
 ];
