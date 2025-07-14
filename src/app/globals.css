@@ -24,7 +24,7 @@
 
 @layer base {
   .nav-item {
-    @apply px-4 py-1.5 rounded-full text-sm transition-all duration-600;
+    @apply px-4 py-1.5 rounded-full text-sm transition-all duration-700;
   }
 
   .hero-ring {
@@ -32,13 +32,17 @@
   }
 }
 
-html,
-body {
-  scroll-behavior: smooth;
-}
-
 html {
+  scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+
+  -webkit-user-select: none; /* Safari and older Chrome */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer and old Edge */
+  user-select: none; /* Standard property for modern browsers */
+
+  -webkit-touch-callout: none; /* Safari (iOS) */
+  touch-action: manipulation; /* Modern browsers supporting Pointer Events (e.g., Chrome, Edge, Firefox on touch devices) */
 }
 
 html::-webkit-scrollbar {
