@@ -25,7 +25,7 @@ export const ToolboxItem = ({
         className
       )}
     >
-      <div className="flex">
+      <div className="flex -translate-x-20">
         <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-100%" }}
@@ -97,7 +97,7 @@ export const ToolboxItem = ({
         </motion.div>
       </div>
 
-      <div className="flex">
+      <div className="flex -translate-x-96">
         <motion.div
           initial={{ x: "-100%" }}
           animate={{ x: 0 }}

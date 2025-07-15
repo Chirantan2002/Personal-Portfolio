@@ -21,6 +21,7 @@ import { RiNextjsFill } from "react-icons/ri";
 import { FaPython } from "react-icons/fa";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItem } from "@/components/ToolboxItemTape";
+import { SiTailwindcss } from "react-icons/si";
 import HobbyTape from "@/components/HobbyTape";
 import { motion } from "framer-motion";
 
@@ -56,6 +57,10 @@ const toolboxItems = [
   {
     title: "MongoDB",
     iconType: SiMongodb,
+  },
+  {
+    title: "tailwindCSS",
+    iconType: SiTailwindcss,
   },
   {
     title: "Chrome",

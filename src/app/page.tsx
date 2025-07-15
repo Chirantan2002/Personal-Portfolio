@@ -1,3 +1,4 @@
+"use client";
 import { AboutSection } from "@/sections/About";
 import { Contact } from "@/sections/Contact";
 import { Header } from "@/sections/Header";

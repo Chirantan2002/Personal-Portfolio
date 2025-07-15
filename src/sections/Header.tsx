@@ -21,7 +21,7 @@ export const Header = () => {
           <a
             key={index}
             onClick={() => scrollToSection(section)}
-            className="nav-item hover:bg-white hover:bg-shadow-md  text-white/90 hover:text-slate-900 font-semibold text-sm md:text-md uppercase cursor-pointer tracking-tighter"
+            className="nav-item hover:bg-white hover:bg-shadow-md  text-white/90 hover:text-slate-900 font-bold text-sm md:text-md md:uppercase cursor-pointer sm:tracking-tighter md:tracking-wide"
           >
             {section}
           </a>

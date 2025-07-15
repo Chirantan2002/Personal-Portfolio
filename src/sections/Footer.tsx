@@ -50,12 +50,12 @@ export const Footer = () => {
               <a
                 key={title}
                 href={href}
+                target="_blank"
                 className={`inline-flex place-items-center space-x-1.5`}
               >
                 <Icon
                   className={`h-6 w-6 text-amber-50 transition duration-300 ease-in-out ${hoverColor}`}
                 />
-                {/* <span className={`text-white/70 tiktok-sans-semibold ${hoverColor}`}>{title}</span> */}
               </a>
             ))}
           </nav>
