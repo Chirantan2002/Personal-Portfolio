@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { PropsWithChildren } from "react";
-import { motion } from "framer-motion";
 
 export const Orbit = ({
   children,
@@ -23,14 +22,14 @@ export const Orbit = ({
           }}
         >
           <div className="h-max w-max animate-spin transition-all [animation-duration:10s] ease-in-out">
-            <motion.div
+            <div
               className="inline-flex animate-pulse transition-all ease-in-out"
               style={{
                 transform: `rotate(${rotation * -1}deg)`,
               }}
             >
               {children}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

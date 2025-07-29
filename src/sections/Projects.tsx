@@ -1,7 +1,7 @@
 "use client";
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import LexifyImage from "@/assets/images/Lexify-landing-page.png";
+import MedicalReportPage from "@/assets/images/Medical-Report-Analyzer-App.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -12,46 +12,46 @@ import { TapeAnimationComponent } from "@/components/TapeAnimation";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
+    // company: "Acme Corp",
+    year: "2025",
     title: "Dark Saas Landing Page",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Built with Next.js and Typescript" },
+      { title: "Highly responsive for small and large screens" },
+      { title: "Engaging and captivating design" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    github_link: "dummy_link",
+    link: "https://dark-landing-page-nine.vercel.app/",
+    github_link: "https://github.com/Chirantan2002/Dark-Landing-Page",
     image: darkSaasLandingPage,
-    category: "Saas",
-  },
-  {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
-    results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
-    ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    github_link: "dummy_link",
-    image: lightSaasLandingPage,
-    category: "Saas",
-  },
-  {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    github_link: "dummy_link",
-    image: aiStartupLandingPage,
     category: "Frontend",
+  },
+  {
+    // company: "Innovative Co",
+    year: "2025",
+    title: "Lexify - Dynamic Language Translator",
+    results: [
+      { title: "Built with React and Next.js" },
+      { title: "OpenAi API integrated within" },
+      { title: "Supports multiple languages" },
+    ],
+    link: "https://lexifywebapp.vercel.app/",
+    github_link: "https://github.com/Chirantan2002/Lexify",
+    image: LexifyImage,
+    category: "Frontend",
+  },
+  {
+    // company: "Quantum Dynamics",
+    year: "2025",
+    title: "Medical Report Analyzer",
+    results: [
+      { title: "Created a user-friendly interface" },
+      { title: "Flask API for efficient data processing" },
+      { title: "Groq API for llama-3 model" },
+    ],
+    // link: "https://youtu.be/Z7I5uSRHMHg",
+    github_link: "https://github.com/Chirantan2002/Medical-Report-Analyzer",
+    image: MedicalReportPage,
+    category: "Ai",
   },
 ];
 
@@ -119,7 +119,7 @@ export const ProjectSection = () => {
                 }}
               ></div>
               <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase space-x-2 tracking-widest text-sm text-transparent bg-clip-text">
-                <span>{project.company}</span>
+                {/* <span>{project.company}</span> */}
                 <span>&bull;</span>
                 <span>{project.year}</span>
               </div>
@@ -139,14 +139,16 @@ export const ProjectSection = () => {
                 ))}
               </ul>
               <div className="flex flex-col md:flex-row space-x-4 mt-5">
-                <a href={project.link}>
-                  <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl font-semibold inline-flex items-center justify-center space-x-2 mt-4 md:p-4 cursor-pointer">
-                    <span> Visit Live Site</span>
-                    <ArrowUpRightIcon className="size-5" />
-                  </button>
-                </a>
-                <a href={project.github_link}>
-                  <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl font-semibold inline-flex items-center justify-center space-x-2 mt-4 md:p-4 cursor-pointer">
+                {project.link && (
+                  <a target="_blank" href={project.link}>
+                    <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl font-semibold inline-flex items-center justify-center space-x-2 mt-4 md:p-4 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out">
+                      <span> Visit Live Site</span>
+                      <ArrowUpRightIcon className="size-5" />
+                    </button>
+                  </a>
+                )}
+                <a target="_blank" href={project.github_link}>
+                  <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl font-semibold inline-flex items-center justify-center space-x-2 mt-4 md:p-4 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out">
                     <span>Github</span>
                     <ArrowUpRightIcon className="size-5" />
                   </button>

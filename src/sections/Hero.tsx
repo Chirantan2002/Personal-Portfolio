@@ -112,7 +112,7 @@ export const HeroSection = () => {
         <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 mt-8 mx-auto">
           <div className="gap-4 flex flex-col md:flex-row justify-center items-center">
             <button
-              className="inline-flex items-center space-x-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer hover:bg-white/10 transition duration-300 tracking-wide font-semibold"
+              className="inline-flex items-center space-x-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer transition duration-300 tracking-wide font-semibold bg-white/5 hover:bg-white/10"
               onClick={() => {
                 const ele = document.getElementById("Projects");
                 if (ele) {

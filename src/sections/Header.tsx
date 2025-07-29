@@ -16,7 +16,7 @@ export const Header = () => {
 
   return (
     <div className="flex justify-center items-center fixed w-full top-3 z-30">
-      <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full backdrop-blur-sm bg-inherit  transition duration-400 ease-in-out bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40">
+      <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full backdrop-blur-sm bg-inherit transition duration-400 ease-in-out bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40">
         {sections.map((section, index) => (
           <a
             key={index}
