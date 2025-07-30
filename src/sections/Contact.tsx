@@ -1,6 +1,6 @@
 import React from "react";
 import GrainImage from "@/assets/images/grain.jpg";
-import ContactForm from "@/components/ContactForm";
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 
 export const Contact = () => {
   return (
@@ -23,11 +23,17 @@ export const Contact = () => {
                 discuss how I can help you achieve your goals.
               </p>
             </div>
+            <div>
+              <a
+                href="/contact"
+                className="bg-black text-white p-4 flex rounded-md font-md text-center"
+              >
+                Get in touch <ArrowUpRightIcon />
+              </a>
+            </div>
           </div>
-          <ContactForm />
         </div>
       </div>
-
     </div>
   );
 };
