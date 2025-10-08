@@ -2,6 +2,7 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import LexifyImage from "@/assets/images/Lexify-landing-page.png";
 import MedicalReportPage from "@/assets/images/Medical-Report-Analyzer-App.png";
+import CaretPreviewImage from "@/assets/images/code-editor-preview.png";
 import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
@@ -9,6 +10,8 @@ import GrainImage from "@/assets/images/grain.jpg";
 import { useState } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TapeAnimationComponent } from "@/components/TapeAnimation";
+import { HiCog } from "react-icons/hi2";
+import { FaWrench } from "react-icons/fa";
 
 const portfolioProjects = [
   {
@@ -17,7 +20,7 @@ const portfolioProjects = [
     title: "Dark Saas Landing Page",
     results: [
       { title: "Built with Next.js and Typescript" },
-      { title: "Highly responsive for small and large screens" },
+      { title: "Highly responsive different screens" },
       { title: "Engaging and captivating design" },
     ],
     link: "https://dark-landing-page-nine.vercel.app/",
@@ -31,7 +34,7 @@ const portfolioProjects = [
     title: "Lexify - Dynamic Language Translator",
     results: [
       { title: "Built with React and Next.js" },
-      { title: "OpenAi API integrated within" },
+      { title: "Gemini API integrated within" },
       { title: "Supports multiple languages" },
     ],
     link: "https://lexifywebapp.vercel.app/",
@@ -52,6 +55,20 @@ const portfolioProjects = [
     github_link: "https://github.com/Chirantan2002/Medical-Report-Analyzer",
     image: MedicalReportPage,
     category: "Ai",
+  },
+  {
+    // company: "Quantum Dynamics",
+    year: "2025",
+    title: "Caret - the dynamic code editor",
+    results: [
+      { title: "Created a robust code editor using Next.js" },
+      { title: "Used Piston-Api for efficient code execution" },
+      { title: "Snippets page is there for quick code sharing" },
+    ],
+    link: "https://caret-code-editor.vercel.app/",
+    github_link: "https://github.com/Chirantan2002/code-editor-webapp",
+    image: CaretPreviewImage,
+    category: "Saas",
   },
 ];
 
@@ -118,10 +135,12 @@ export const ProjectSection = () => {
                   backgroundImage: `url(${GrainImage.src})`,
                 }}
               ></div>
-              <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase space-x-2 tracking-widest text-sm text-transparent bg-clip-text">
+              <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase space-x-2 tracking-widest text-sm text-transparent bg-clip-text items-center">
                 {/* <span>{project.company}</span> */}
-                <span>&bull;</span>
-                <span>{project.year}</span>
+                <span className="text-white/50 border-2 border-gray-400 rounded-full p-1">
+                  <FaWrench className="size-4" />
+                </span>
+                <span className="text-xl">{project.year}</span>
               </div>
               <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">
                 {project.title}

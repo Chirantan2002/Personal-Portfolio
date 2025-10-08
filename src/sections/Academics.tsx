@@ -40,7 +40,7 @@ export const Academics = () => {
                 title="Bachelors"
                 description="Bachelors of Information Technology from Jadavpur University"
               />
-              
+
               {/* <Image/> */}
               <div className="flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 space-x-4">
                 <motion.div
