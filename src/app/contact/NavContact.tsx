@@ -7,11 +7,8 @@ const HOME_PAGE_LINK = "https://chirantan-portfolio.vercel.app";
 const NavContact = () => {
   return (
     <div className="container mx-auto px-4">
-      <nav className="flex items-center justify-start py-2 border-b border-white/15">
+      <nav className="flex items-center justify-start pb-2 border-b border-white/15">
         <motion.a
-          drag
-          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-          dragElastic={0.4}
           whileTap={{ scale: 0.8 }}
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
           href={HOME_PAGE_LINK}

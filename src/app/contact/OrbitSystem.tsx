@@ -17,7 +17,7 @@ const OrbitSystem = () => {
   const orbitRadii = [...new Set(icons.map((i) => i.radius))];
 
   return (
-    <div className="">
+    <div className="w-full">
       <div className="flex items-center justify-center">
         <div
           style={{
@@ -44,12 +44,13 @@ const OrbitSystem = () => {
             className="text-white"
           >
             <div className="flex items-center justify-center">
-                <Image
-                  src={memojiImage}
-                  width={100}
-                  alt="profile-image"
-                  className="drop-shadow-xl drop-shadow-sky-400/60"
-                />
+              <Image
+                src={memojiImage}
+                width={100}
+                height={100}
+                alt="profile-image"
+                className="drop-shadow-xl drop-shadow-sky-400/60 pb-5"
+              />
             </div>
           </div>
           {/* radius 100 Orbit */}

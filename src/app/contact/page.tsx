@@ -8,14 +8,9 @@ import ContactInfiniteScroll from "./ContactInfiniteScroll";
 
 const page = () => {
   return (
-    <div className="">
-      <div className="text-white bg-zinc-950 h-full w-screen">
-        <div className="">
-          <NavContact />
-        </div>
-        <div className="mt-16 mb-16">
-          <OrbitSystem />
-        </div>
+    <div className="min-h-screen w-full">
+      <div className="container mx-auto">
+        <NavContact />
         <div className="md:hidden sm:inline-block">
           <ContactInfiniteScroll />
         </div>

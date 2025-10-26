@@ -10,7 +10,6 @@ import GrainImage from "@/assets/images/grain.jpg";
 import { useState } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TapeAnimationComponent } from "@/components/TapeAnimation";
-import { HiCog } from "react-icons/hi2";
 import { FaWrench } from "react-icons/fa";
 
 const portfolioProjects = [
