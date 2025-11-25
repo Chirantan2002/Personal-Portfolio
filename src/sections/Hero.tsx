@@ -8,11 +8,17 @@ import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { RiScrollToBottomLine } from "react-icons/ri";
 import { GoRocket } from "react-icons/go";
-import { Orbit } from "@/components/Orbit";
+import Orbit from "@/components/Orbit";
 import { HiOutlineBolt } from "react-icons/hi2";
 import { FiMoon } from "react-icons/fi";
 import { RiMeteorLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
+import { Space_Grotesk } from "next/font/google";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const HeroSection = () => {
   return (
@@ -87,18 +93,17 @@ export const HeroSection = () => {
             </div>
             {/* Green-dot animation */}
 
-            <div className="text-sm font-medium">
+            <div className="text-sm font-medium font-serif tracking-wide">
               Aspiring Software Engineer
             </div>
           </div>
         </div>
         <div className="max-w-[1024px] mx-auto">
-          <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
+          <h1 className={`${spaceGrotesk.className} font-black text-3xl md:text-5xl text-center mt-8 tracking-wide`}>
             Building things for fun
           </h1>
-          <p className="mt-4 md:text-lg text-center px-3 text-white/60 playfair-display-normal tracking-wider">
-            Hi, I'm Chirantan Biswas. I'm a 3rd year student of Jadavpur
-            University.
+          <p className={`${spaceGrotesk.className} mt-4 md:text-lg text-center px-3 text-white/60 tracking-wider`}>
+            Hi, I'm Chirantan Biswas - a 3rd-year Jadavpur University student with a growing obsession for web development and creating things that live on the internet...
           </p>
         </div>
 

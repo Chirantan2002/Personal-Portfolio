@@ -1,4 +1,10 @@
 import React from "react";
+import { Space_Grotesk } from "next/font/google";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 interface SectionHeaderProps {
   eyebrow: string;
@@ -16,10 +22,10 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       <div className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center text-transparent bg-clip-text md:text-lg">
         {eyebrow}
       </div>
-      <h2 className="font-serif text-3xl md:text-6xl text-center mt-6">
+      <h2 className={`${spaceGrotesk.className} font-semibold text-3xl md:text-6xl text-center mt-6`}>
         {title}
       </h2>
-      <p className="text-center px-10 md:px-0 md:text-lg playfair-display-normal text-white/60 mt-4 max-w-md mx-auto">
+      <p className={`${spaceGrotesk.className} text-center px-10 md:px-0 md:text-lg text-white/60 mt-4 max-w-md mx-auto`}>
         {about}
       </p>
     </div>

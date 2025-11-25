@@ -1,15 +1,9 @@
-// next.config.js or next.config.ts
-import type { NextConfig } from "next";
-
-/** @type {NextConfig} */
+import type { NextConfig } from 'next'
+ 
 const nextConfig: NextConfig = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-    return config;
+  turbopack: {
+    // ...
   },
-};
-
-export default nextConfig;
+}
+ 
+export default nextConfig

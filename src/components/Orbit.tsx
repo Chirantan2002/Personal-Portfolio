@@ -1,18 +1,15 @@
 "use client";
-import React from "react";
-import { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 
-export const Orbit = ({
-  children,
-  size,
-  rotation,
-}: PropsWithChildren<{
+type OrbitProps = PropsWithChildren<{
   size: number;
-  rotation: number;
-}>) => {
+  rotation?: number;
+}>;
+
+const Orbit: React.FC<OrbitProps> = ({ children, size, rotation = 0 }) => {
   return (
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-20">
-      <div className="animate-spin [animation-duration:30s]">
+      <div className="animate-spin" style={{ animationDuration: "30s" }}>
         <div
           className="flex items-start justify-start"
           style={{
@@ -21,11 +18,14 @@ export const Orbit = ({
             transform: `rotate(${rotation}deg)`,
           }}
         >
-          <div className="h-max w-max animate-spin transition-all [animation-duration:10s] ease-in-out">
+          <div
+            className="h-max w-max animate-spin transition-all"
+            style={{ animationDuration: "10s", transitionTimingFunction: "ease-in-out" }}
+          >
             <div
-              className="inline-flex animate-pulse transition-all ease-in-out"
+              className="inline-flex animate-pulse transition-all"
               style={{
-                transform: `rotate(${rotation * -1}deg)`,
+                transform: `rotate(${-rotation}deg)`,
               }}
             >
               {children}
@@ -36,3 +36,5 @@ export const Orbit = ({
     </div>
   );
 };
+
+export default Orbit;

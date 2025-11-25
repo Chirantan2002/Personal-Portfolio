@@ -11,6 +11,12 @@ import { useState } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TapeAnimationComponent } from "@/components/TapeAnimation";
 import { FaWrench } from "react-icons/fa";
+import { Space_Grotesk } from "next/font/google";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 const portfolioProjects = [
   {
@@ -137,11 +143,11 @@ export const ProjectSection = () => {
               <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase space-x-2 tracking-widest text-sm text-transparent bg-clip-text items-center">
                 {/* <span>{project.company}</span> */}
                 <span className="text-white/50 border-2 border-gray-400 rounded-full p-1">
-                  <FaWrench className="size-4" />
+                  <FaWrench className="size-2 md:size-4" />
                 </span>
-                <span className="text-xl">{project.year}</span>
+                <span className={`${spaceGrotesk.className} text-sm md:text-lg`}>{project.year}</span>
               </div>
-              <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">
+              <h3 className={`${spaceGrotesk.className} font-semibold text-2xl mt-2 md:mt-5 md:text-4xl`}>
                 {project.title}
               </h3>
               <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
