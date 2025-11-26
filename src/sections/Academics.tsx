@@ -26,7 +26,7 @@ const JU_IMAGES = [
 
 export const Academics = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-16">
       <div className="mt-16 md:mt-24 lg:mt-32 mb-16 md:mb-24 lg:mb-32 px-4">
         <div>
           <SectionHeader

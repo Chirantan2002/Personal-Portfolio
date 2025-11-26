@@ -34,8 +34,13 @@ const config: Config = {
       },
       animation: {
         "ping-large": "ping-large 1s ease-in-out infinite",
+        "shine": "shine 10s linear infinite",
       },
       keyframes: {
+        "shine": {
+          "0%": { "background-position": "100%" },
+          "100%": { "background-position": "-100%" },
+        },
         "ping-large": {
           "75%, 100%": {
             transform: "scale(3)",

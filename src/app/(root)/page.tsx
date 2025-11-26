@@ -8,6 +8,7 @@ import { TapeSection } from "@/sections/Tape";
 import { Footer } from "@/sections/Footer";
 import { Academics } from "@/sections/Academics";
 import Techstack from "@/sections/Techstack";
+import StatsSection from "@/sections/Stats";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ProjectSection />
       <TapeSection />
       <Techstack />
+      <StatsSection />
       <Academics />
       <AboutSection />
       <Contact />

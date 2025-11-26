@@ -3,15 +3,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import "tailwindcss";
 
-
 @theme {
   --animate-ping-large: ping-large 1s ease-in-out infinite;
+  --animate-shine: shine 10s ease-in-out infinite;
 
   @keyframes ping-large {
     75%,
     100% {
       transform: scale(3);
       opacity: 0;
+    }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
     }
   }
 }
@@ -118,3 +127,12 @@ html {
   font-weight: 800;
   font-style: normal;
 }
+
+/* @layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} */
