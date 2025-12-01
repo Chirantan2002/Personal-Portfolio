@@ -14,50 +14,19 @@ import { SiLeetcode } from "react-icons/si";
 import ShinyText from "@/components/ShinyText";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import {
+  LeetcodeBadges,
+  LeetcodeContest,
+  LeetcodeProfile,
+  LeetcodeSolved,
+} from "@/lib/types";
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
-type LeetcodeProfile = {
-  username: string;
-  name: string;
-  avatar: string;
-  ranking: number;
-};
-
-type LeetcodeBadges = {
-  badgesCount: number;
-  badges: Array<{
-    id: string;
-    displayName: string;
-    icon: string;
-    creationTime: string;
-  }>;
-};
-
-type LeetcodeContest = {
-  contestAttend: number;
-  contestRating: number;
-  contestGlobalRanking: number;
-  totalParticipants: number;
-  contestTopPercentage: number;
-  contestBadges: {
-    name: string;
-  };
-};
-
-type LeetcodeSolved = {
-  solvedProblem: number;
-  easySolved: number;
-  mediumSolved: number;
-  hardSolved: number;
-};
-
 const StatsSection = () => {
-  //   const profile_info = getLeetcodeProfileData();
-
   const [profile, setProfile] = useState<LeetcodeProfile | null>(null);
   const [badges, setBadges] = useState<LeetcodeBadges | null>(null);
   const [solved, setSolved] = useState<LeetcodeSolved | null>(null);
@@ -103,16 +72,20 @@ const StatsSection = () => {
         title="Problem Solving Snapshot"
         about="A quick look at the stats that reflect my dedication to mastering DSA and coding excellence."
       />
-      <main className="mb-8">
-        <Card>
+      <main className="mb-8 flex items-center justify-center mx-auto">
+        <Card className="w-full md:max-w-xl">
           <section className="flex flex-col gap-4">
             {/* Profile-Image */}
             <div className="flex items-center justify-between mb-8">
               <span className="flex items-center gap-2 text-sm uppercase font-semibold text-gray-200">
                 <SiLeetcode className="size-4" />
                 <span className="-mx-1">LeetCode</span>
-                <Link href="https://leetcode.com/Moonjar_007/" target="_blank" className="-mx-1">
-                  <ArrowUpRight className="size-5"/>
+                <Link
+                  href="https://leetcode.com/Moonjar_007/"
+                  target="_blank"
+                  className="-mx-1"
+                >
+                  <ArrowUpRight className="size-5" />
                 </Link>
               </span>
               <span className="md:text-3xl font-bold tracking-tight text-blue-300">
@@ -231,7 +204,7 @@ const StatsSection = () => {
                         alt={`${badge.displayName}-image`}
                         height={70}
                         width={70}
-                        className="inline-block"
+                        className="inline-block pointer-events-none"
                       />
                     </div>
                   );

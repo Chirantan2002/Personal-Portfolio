@@ -204,11 +204,11 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     gap = 32,
     pauseOnHover,
     hoverSpeed,
-    fadeOut = false,
+    fadeOut = true,
     fadeOutColor,
-    scaleOnHover = false,
+    scaleOnHover = true,
     renderItem,
-    ariaLabel = 'Partner logos',
+    ariaLabel = 'Tech-Stack-Logos',
     className,
     style
   }) => {

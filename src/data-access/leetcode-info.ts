@@ -31,7 +31,7 @@ export const getLeetcodeFullProfileData = async () => {
   try {
     if (!FULL_PROFILE_URI) throw new Error("FULL_PROFILE_URI is not defined");
     const res = await axios.get(FULL_PROFILE_URI);
-    console.log("Full profile data:", res.data);
+    // console.log("Full profile data:", res.data);
     return res.data;
   } catch (err) {
     console.error("Error fetching full profile:", err);
@@ -43,7 +43,7 @@ export const getLeetcodeBadgesData = async () => {
   try {
     if (!BADGES_URI) throw new Error("BADGES_URI is not defined");
     const res = await axios.get(BADGES_URI);
-    console.log("Badges data:", res.data);
+    // console.log("Badges data:", res.data);
     return res.data;
   } catch (err) {
     console.error("Error fetching badges:", err);
@@ -55,7 +55,7 @@ export const getLeetcodeContestData = async () => {
   try {
     if (!CONTEST_URI) throw new Error("CONTEST_URI is not defined");
     const res = await axios.get(CONTEST_URI);
-    console.log("Contest data:", res.data);
+    // console.log("Contest data:", res.data);
     return res.data;
   } catch (err) {
     console.error("Error fetching contest:", err);
@@ -67,7 +67,7 @@ export const getLeetcodeSolvedData = async () => {
   try {
     if (!SOLVED_URI) throw new Error("SOLVED_URI is not defined");
     const res = await axios.get(SOLVED_URI);
-    console.log("Solved data:", res.data);
+    // console.log("Solved data:", res.data);
     return res.data;
   } catch (err) {
     console.error("Error fetching solved:", err);

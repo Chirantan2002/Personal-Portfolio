@@ -33,73 +33,60 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const techLogos = [
-  { node: <SiReact />, title: "React", href: "https://react.dev" },
-  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiReact />, title: "React" },
+  { node: <SiNextdotjs />, title: "Next.js" },
   {
     node: <SiTypescript />,
     title: "TypeScript",
-    href: "https://www.typescriptlang.org",
   },
   {
     node: <SiTailwindcss />,
     title: "Tailwind CSS",
-    href: "https://tailwindcss.com",
   },
   {
     node: <SiJavascript />,
     title: "JavaScript",
-    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
-  { node: <FaNodeJs />, title: "Node.js", href: "https://nodejs.org" },
+  { node: <FaNodeJs />, title: "Node.js" },
   {
     node: <SiMongodb />,
     title: "MongoDB",
-    href: "https://www.mongodb.com",
   },
   {
     node: <VscVscode />,
     title: "VSCode",
-    href: "https://code.visualstudio.com",
   },
   {
     node: <FaHtml5 />,
     title: "HTML5",
-    href: "https://developer.mozilla.org/en-US/docs/Glossary/HTML5",
   },
   {
     node: <FaCss3Alt />,
     title: "CSS3",
-    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     node: <FaPython />,
     title: "Python",
-    href: "https://www.python.org",
   },
   {
     node: <FaGithub />,
     title: "GitHub",
-    href: "https://github.com/Chirantan2002",
   },
   {
     node: <FaGitAlt />,
     title: "Git",
-    href: "https://git-scm.com",
   },
   {
     node: <SiClerk />,
     title: "Clerk",
-    href: "https://clerk.dev",
   },
   {
     node: <SiPrisma />,
     title: "Prisma",
-    href: "https://www.prisma.io",
   },
   {
     node: <BsBrowserChrome />,
     title: "Chrome",
-    href: "https://www.google.com/chrome",
   },
 ];
 
@@ -114,7 +101,7 @@ const Techstack = () => {
             about="Technologies that fuel my creativity & drives my work"
           />
         </div>
-        <Card className="p-0  overflow-clip">
+        <Card className="p-0  overflow-hidden max-w-4xl mx-auto">
           <div className="absolute inset-0 w-full h-full">
             <LetterGlitch
               glitchSpeed={50}
@@ -152,7 +139,6 @@ const Techstack = () => {
                 "tech stack",
                 "web",
               ]}
-              
               fontSize="2rem"
               mouseConstraintStiffness={0.9}
               wireframes={false}
@@ -163,19 +149,43 @@ const Techstack = () => {
           </div>
           {/* badges-for-mobile-view */}
           <div className={`${spaceGrotesk.className} block md:hidden`}>
-            <main className="flex items-center justify-center flex-wrap p-2">
-              <Badge className="bg-gray-900 text-white">NextJs</Badge>
-              <Badge className="bg-gray-900 text-white">React</Badge>
-              <Badge className="bg-gray-900 text-white">TailwindCSS</Badge>
-              <Badge className="bg-gray-900 text-white">Typescript</Badge>
-              <Badge className="bg-gray-900 text-white">NodeJs</Badge>
-              <Badge className="bg-gray-900 text-white">C++</Badge>
-              <Badge className="bg-gray-900 text-white">Javascript</Badge>
-              <Badge className="bg-gray-900 text-white">Convex</Badge>
-              <Badge className="bg-gray-900 text-white">Clerk</Badge>
-              <Badge className="bg-gray-900 text-white">Prisma</Badge>
-              <Badge className="bg-gray-900 text-white">Python</Badge>
-              <Badge className="bg-gray-900 text-white">VsCode</Badge>
+            <main className="flex flex-1 space-x-2 space-y-1 items-center justify-center flex-wrap p-2">
+              <Badge className="bg-[#797979]/50 text-white">
+                <span className="tracking-wide text-gray-100">NextJs</span>
+              </Badge>
+              <Badge className="bg-[#00d8fe]/50 text-white">
+                <span className="tracking-wide text-gray-100">React</span>
+              </Badge>
+              <Badge className="bg-[#1aadb0]/50 text-white">
+                <span className="tracking-wide text-gray-100">TailwindCSS</span>
+              </Badge>
+              <Badge className="bg-[#0077c6]/50 text-white">
+                <span className="tracking-wide text-gray-100">Typescript</span>
+              </Badge>
+              <Badge className="bg-[#7ec729]/50 text-white">
+                <span className="tracking-wide text-gray-100">NodeJs</span>
+              </Badge>
+              <Badge className="bg-[#03519a]/50 text-white">
+                <span className="tracking-wide text-gray-100">C++</span>
+              </Badge>
+              <Badge className="bg-[#efd91c]/50 text-white">
+                <span className="tracking-wide text-gray-100">Javascript</span>
+              </Badge>
+              <Badge className="bg-[#892371]/50 text-white">
+                <span className="tracking-wide text-gray-100">Convex</span>
+              </Badge>
+              <Badge className="bg-[#6c34f7]/50 text-white">
+                <span className="tracking-wide text-gray-100">Clerk</span>
+              </Badge>
+              <Badge className="bg-[#01344b]/50 text-white">
+                <span className="tracking-wide text-gray-100">Prisma</span>
+              </Badge>
+              <Badge className="bg-[#36709f]/50 text-white">
+                <span className="tracking-wide text-gray-100">Python</span>
+              </Badge>
+              <Badge className="bg-[#1197f1]/50 text-white">
+                <span className="tracking-wide text-gray-100">VsCode</span>
+              </Badge>
             </main>
           </div>
         </Card>
