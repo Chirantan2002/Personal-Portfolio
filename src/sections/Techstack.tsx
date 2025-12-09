@@ -101,7 +101,8 @@ const Techstack = () => {
             about="Technologies that fuel my creativity & drives my work"
           />
         </div>
-        <Card className="p-0  overflow-hidden max-w-4xl mx-auto">
+        <Card className="p-2 relative overflow-hidden w-full max-w-4xl mx-auto">
+          {/* glitchy text */}
           <div className="absolute inset-0 w-full h-full">
             <LetterGlitch
               glitchSpeed={50}
@@ -126,10 +127,10 @@ const Techstack = () => {
           </div>
           {/* falling-text-only-for-desktop(medium screens) */}
           <div
-            className={`${spaceGrotesk.className} h-60 w-full hidden md:block overflow-hidden`}
+            className={`${spaceGrotesk.className} h-60 max-w-4xl w-full hidden md:block overflow-hidden`}
           >
             <FallingText
-              text={`I work with a modern, performance-driven tech stack that helps me build fast, scalable, and user-focused web applications`}
+              text={`I work with a modern, performance driven tech stack that helps me build fast, scalable, and user focused web applications`}
               highlightWords={[
                 "modern",
                 "fast",

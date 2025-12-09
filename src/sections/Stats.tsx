@@ -2,13 +2,6 @@
 import { useEffect, useState } from "react";
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
-import {
-  getLeetcodeFullProfileData,
-  getLeetcodeProfileData,
-  getLeetcodeSolvedData,
-  getLeetcodeBadgesData,
-  getLeetcodeContestData,
-} from "@/data-access/leetcode-info";
 import { Space_Grotesk } from "next/font/google";
 import { SiLeetcode } from "react-icons/si";
 import ShinyText from "@/components/ShinyText";
@@ -38,19 +31,33 @@ const StatsSection = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        console.log("starting to fetch data...");
-        const [profileData, badgesData, solvedData, contestsData] =
-          await Promise.all([
-            getLeetcodeProfileData(),
-            getLeetcodeBadgesData(),
-            getLeetcodeSolvedData(),
-            getLeetcodeContestData(),
-          ]);
+        setError(null);
+        console.log("fetching from /api/leetcode...");
+        const res = await fetch("/api/leetcode");
+        if (!res.ok) {
+          if (res.status === 429) throw new Error("Rate limited by upstream API (429)");
+          throw new Error(`Failed to fetch: ${res.status}`);
+        }
+        const data = await res.json();
+        console.log("raw /api/leetcode response:", data);
 
-        setProfile(profileData);
-        setBadges(badgesData);
-        setSolved(solvedData);
-        setContests(contestsData);
+        // normalize profile — handle nested shapes some APIs use
+        let rawProfile = data.profile ?? null;
+
+        if (rawProfile) {
+          // common alternate locations for ranking
+          rawProfile.ranking =
+            rawProfile.ranking ??
+            rawProfile.userRanking ??
+            rawProfile.matchedUserStats?.userRanking ??
+            rawProfile.matchedUserStats?.ranking ??
+            rawProfile.matchedUserStats?.rating;
+        }
+
+        setProfile(rawProfile);
+        setBadges(data.badges ?? null);
+        setSolved(data.solved ?? null);
+        setContests(data.contest ?? null);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to fetch data");
       } finally {
@@ -58,6 +65,7 @@ const StatsSection = () => {
       }
     };
 
+    // remove the early log of profile here; it will always be null before fetch
     fetchData();
   }, []);
 
