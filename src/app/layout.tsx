@@ -30,7 +30,7 @@ export default function RootLayout({
             inter.variable,
             fontMonaSans.variable,
             calistoga.variable,
-            "antialiased bg-slate-900 text-white font-sans"
+            "antialiased bg-slate-950 text-white font-sans"
           )
         )}
       >

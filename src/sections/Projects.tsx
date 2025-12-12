@@ -45,7 +45,7 @@ const portfolioProjects = [
     link: "https://lexifywebapp.vercel.app/",
     github_link: "https://github.com/Chirantan2002/Lexify",
     image: LexifyImage,
-    category: "Frontend",
+    category: "Saas",
   },
   {
     // company: "Quantum Dynamics",
@@ -113,15 +113,15 @@ export const ProjectSection = () => {
               type="button"
               key={index}
               onClick={() => setSelectedCategory(category)}
-              className={`relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-md group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white outline-none cursor-pointer transition-colors duration-1000 ease-in-out tiktok-sans-black ${
+              className={`relative inline-flex items-center justify-center py-2 px-5 max-w-max tracking-wider mb-2 me-2 text-md md:text-lg lg:text-xl overflow-hidden font-bold text-gray-900 rounded-full border-none outline-none cursor-pointer transition-colors duration-100 ease-in-out ${
+                spaceGrotesk.className
+              } ${
                 selectedCategory == category
-                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white tracking-wide border-none"
-                  : "bg-white/10 text-white border-white/20 tracking-wide hover:bg-emerald-500 hover:text-slate-900 hover:border-emerald-500"
+                  ? "bg-gradient-to-r from-pink-500 to-purple-600 text-white"
+                  : "bg-gray-600/70 hover:bg-[#a7c957] hover:text-[#14213d] text-white"
               }`}
             >
-              <span className="relative px-5 py-2.5 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent tracking-wider">
-                {category}
-              </span>
+              {category}
             </button>
           ))}
         </div>
@@ -145,16 +145,22 @@ export const ProjectSection = () => {
                 <span className="text-white/50 border-2 border-gray-400 rounded-full p-1">
                   <FaWrench className="size-2 md:size-4" />
                 </span>
-                <span className={`${spaceGrotesk.className} text-sm md:text-lg`}>{project.year}</span>
+                <span
+                  className={`${spaceGrotesk.className} text-sm md:text-lg`}
+                >
+                  {project.year}
+                </span>
               </div>
-              <h3 className={`${spaceGrotesk.className} font-semibold text-2xl mt-2 md:mt-5 md:text-4xl`}>
+              <h3
+                className={`${spaceGrotesk.className} font-semibold text-2xl mt-2 md:mt-5 md:text-4xl`}
+              >
                 {project.title}
               </h3>
               <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
               <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                 {project.results.map((result) => (
                   <li
-                    className="flex space-x-2 text-sm md:text-base text-white/50"
+                    className={`${spaceGrotesk.className} flex space-x-2 text-sm md:text-base text-white/50`}
                     key={result.title}
                   >
                     <CheckCircleIcon className="size-5 md:size-6" />

@@ -3,13 +3,9 @@ import React from "react";
 import StarIcon from "@/assets/icons/star.svg";
 import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
+// import {}
 
 const ANIMATION_DURATION = 200;
-const FORWARD_HOVER_GRADIENT =
-  "hover:bg-gradient-to-tl hover:from-slate-800 hover:via-violet-500 hover:to-zinc-400 hover:bg-clip-text hover:text-transparent ";
-const REVERSE_HOVER_GRADIENT =
-  "hover:bg-gradient-to-tl hover:from-neutral-400 hover:via-green-500 hover:to-blue-500  hover:bg-clip-text hover:text-transparent";
-const HOVER_STYLE = "transition-colors duration-1000 ease-in-out";
 
 interface TapeAnimationProps {
   words: string[];
@@ -35,7 +31,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
   return (
     <div
       className={twMerge(
-        "py-2 overflow-x-clip hover:cursor-default",
+        "py-2 overflow-x-clip hover:cursor-default w-full md:max-w-[64rem] mx-auto",
         className
       )}
     >
@@ -54,8 +50,8 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 className="inline-flex space-x-1 items-center justify-center"
               >
                 <span
-                  className={`text-white/20 uppercase outfit-normal-black text-5xl 
-                    ${HOVER_STYLE} ${FORWARD_HOVER_GRADIENT}`}
+                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                    `}
                 >
                   {word}
                 </span>
@@ -73,8 +69,8 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 className="inline-flex space-x-1 items-center justify-center"
               >
                 <span
-                  className={`text-white/20 uppercase outfit-normal-black text-5xl 
-                    ${HOVER_STYLE} ${FORWARD_HOVER_GRADIENT}`}
+                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                    `}
                 >
                   {word}
                 </span>
@@ -103,8 +99,8 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 className="inline-flex space-x-1 items-center justify-center"
               >
                 <span
-                  className={`text-white/20 uppercase outfit-normal-black text-5xl 
-                    ${HOVER_STYLE} ${REVERSE_HOVER_GRADIENT}`}
+                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                    `}
                 >
                   {word}
                 </span>
@@ -128,8 +124,8 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
                 className="inline-flex space-x-1 items-center justify-center"
               >
                 <span
-                  className={`text-white/20 uppercase outfit-normal-black text-5xl 
-                    ${HOVER_STYLE} ${REVERSE_HOVER_GRADIENT}`}
+                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                    `}
                 >
                   {word}
                 </span>

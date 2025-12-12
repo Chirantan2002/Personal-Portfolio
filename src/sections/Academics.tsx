@@ -26,16 +26,16 @@ const JU_IMAGES = [
 
 export const Academics = () => {
   return (
-    <div className="container mx-auto mt-16">
-      <div className="mt-16 md:mt-24 lg:mt-32 mb-16 md:mb-24 lg:mb-32 px-4">
-        <div>
-          <SectionHeader
-            eyebrow="Academic Perspectives"
-            title="The Journey So Far"
-            about="Learn more about my academic background and experience."
-          />
-          <div className="flex flex-col gap-8">
-            <Card className="h-max">
+    <div className="container mx-auto">
+      <div className="mt-32 md:mt-56 mb-32 md:mb-56 px-4">
+        <SectionHeader
+          eyebrow="Academic Perspectives"
+          title="The Journey So Far"
+          about="Learn more about my academic background and experience."
+        />
+        <div className="flex items-center justify-center">
+          <main className="w-full md:max-w-4xl px-2 md:px-0 flex flex-col gap-16 md:gap-32">
+            <Card className="overflow-clip">
               <CardHeader
                 title="Bachelors"
                 description="Bachelors of Information Technology from Jadavpur University"
@@ -103,7 +103,7 @@ export const Academics = () => {
                 </motion.div>
               </div>
             </Card>
-            <Card className="-my-1 overflow-clip">
+            <Card className="overflow-clip">
               <CardHeader
                 title="Diploma"
                 description="Completed Diploma in Computer Science & Technology from The Calcutta Technical School, with overall 8.6 GPA."
@@ -182,13 +182,13 @@ export const Academics = () => {
                 </motion.div>
               </div>
             </Card>
-            <Card>
+            <Card className="overflow-clip">
               <CardHeader
                 title="High Schooling"
                 description="Completed High Schooling from Bhatpara Amarkrishna Pathsala, with 81% in 10th boards & 76% in 12th boards."
               />
             </Card>
-          </div>
+          </main>
         </div>
       </div>
     </div>

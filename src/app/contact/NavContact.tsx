@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { BiArrowToLeft } from "react-icons/bi";
 
-const HOME_PAGE_LINK = "https://chirantan-portfolio.vercel.app";
+const HOME_PAGE_LINK = "/";
 
 const NavContact = () => {
   return (

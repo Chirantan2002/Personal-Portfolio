@@ -35,7 +35,8 @@ const StatsSection = () => {
         console.log("fetching from /api/leetcode...");
         const res = await fetch("/api/leetcode");
         if (!res.ok) {
-          if (res.status === 429) throw new Error("Rate limited by upstream API (429)");
+          if (res.status === 429)
+            throw new Error("Rate limited by upstream API (429)");
           throw new Error(`Failed to fetch: ${res.status}`);
         }
         const data = await res.json();
@@ -96,7 +97,7 @@ const StatsSection = () => {
                   <ArrowUpRight className="size-5" />
                 </Link>
               </span>
-              <span className="md:text-3xl font-bold tracking-tight text-blue-300">
+              <span className="md:text-3xl font-bold text-[#e0aaff]">
                 #{profile?.ranking}
               </span>
             </div>
@@ -112,10 +113,10 @@ const StatsSection = () => {
 
             {/* Profile-Info */}
             <div className="flex flex-col items-center mb-6 gap-2">
-              <span className="uppercase text-3xl md:text-4xl font-bold">
+              <span className="uppercase text-[#90e0ef] text-3xl md:text-4xl font-bold">
                 {profile?.name}
               </span>
-              <div className="bg-neutral-800 py-1 px-4 rounded-full">
+              <div className="bg-[#000814] py-1 px-4 rounded-lg">
                 <ShinyText
                   text={`@${profile?.username}`}
                   disabled={false}
@@ -128,19 +129,19 @@ const StatsSection = () => {
             {/* Solved-Info */}
             <div className="mb-6">
               <ul className="space-y-2 font-bold tracking-wider">
-                <li className="flex items-center justify-between bg-white/30 rounded-lg px-4 py-2">
+                <li className="flex items-center justify-between bg-white/20 rounded-lg px-4 py-2">
                   <span className="text-xl md:text-2xl">Total Solved</span>
                   <span className="text-4xl">{solved?.solvedProblem}</span>
                 </li>
-                <li className="flex items-center justify-between bg-green-600/30 px-4 py-2 rounded-lg">
+                <li className="flex items-center justify-between text-[#70e000] bg-green-600/30 px-4 py-2 rounded-lg">
                   <span className="text-2xl">Easy</span>
                   <span className="text-4xl">{solved?.easySolved}</span>
                 </li>
-                <li className="flex items-center justify-between bg-amber-500/30 rounded-lg px-4 py-2">
+                <li className="flex items-center justify-between text-[#ffb600] bg-amber-500/30 rounded-lg px-4 py-2">
                   <span className="text-2xl">Medium</span>
                   <span className="text-4xl">{solved?.mediumSolved}</span>
                 </li>
-                <li className="flex items-center justify-between bg-red-500/30 px-4 py-2 rounded-lg">
+                <li className="flex items-center justify-between text-[#fc2727] bg-red-500/30 px-4 py-2 rounded-lg">
                   <span className="text-2xl">Hard</span>
                   <span className="text-4xl">{solved?.hardSolved}</span>
                 </li>
@@ -152,7 +153,7 @@ const StatsSection = () => {
               <h1 className="text-center font-semibold text-xl md:text-4xl mb-4">
                 About those Contests
               </h1>
-              <ul className="space-y-2 font-bold tracking-wider">
+              <ul className="space-y-2 font-bold text-[#72efdd] tracking-wider">
                 <li className="flex justify-between items-center bg-purple-400/40 px-4 py-2 rounded-lg">
                   <span className="text-2xl">Attended</span>
                   <span className="text-4xl">{contests?.contestAttend}</span>
@@ -197,7 +198,7 @@ const StatsSection = () => {
                     alt={"Knight-Badge-icon"}
                     height={70}
                     width={70}
-                    className="inline-block"
+                    className="inline-block hover:scale-140 transition-all duration-50"
                   />
                 </div>
                 {/* Badges */}
@@ -212,7 +213,7 @@ const StatsSection = () => {
                         alt={`${badge.displayName}-image`}
                         height={70}
                         width={70}
-                        className="inline-block pointer-events-none"
+                        className="inline-block hover:scale-140 transition-all duration-50"
                       />
                     </div>
                   );

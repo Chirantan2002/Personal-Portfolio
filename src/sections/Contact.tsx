@@ -13,12 +13,12 @@ export const Contact = () => {
               backgroundImage: `url(${GrainImage.src})`,
             }}
           ></div>
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center lg:justify-between">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:justify-between">
             <div>
-              <h2 className="font-serif text-2xl md:text-5xl">
+              <h2 className="font-serif text-2xl text-center lg:text-5xl">
                 Let's create something amazing together
               </h2>
-              <p className="text-sm md:text-xl mt-2">
+              <p className="text-sm text-center md:text-lg mt-4 word-break">
                 Ready to bring your next project to life? Let's connect and
                 discuss how I can help you achieve your goals.
               </p>
