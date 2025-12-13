@@ -12,14 +12,14 @@ const MotionCard = motion(Card);
 
 export const AboutSection = () => {
   return (
-    <div className="pb-20 px-5" id="About">
-      <div className="container mx-auto">
+    <div className="container mx-auto">
+      <div className="pb-20 px-5" id="About">
         <SectionHeader
           eyebrow="About Me"
           title="A glimpse into my world"
           about="Learn more about who I am, what I do, and what inspires me."
         />
-        <div className="mt-20 flex flex-col gap-8">
+        <div className="w-full gap-16 md:gap-32 md:max-w-4xl mx-auto mt-20 flex flex-col">
           <MotionCard className="h-[320px]">
             <CardHeader
               title="My Reads"

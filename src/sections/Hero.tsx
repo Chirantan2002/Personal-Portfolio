@@ -23,7 +23,7 @@ const spaceGrotesk = Space_Grotesk({
 export const HeroSection = () => {
   return (
     <div
-      className="py-28 md:py-44 lg:py-52 relative z-0 overflow-x-clip [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+      className="py-28 md:py-40 lg:py-52 relative z-0 overflow-x-clip [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
       id="Home"
     >
       <div className="absolute inset-0 -z-10">
@@ -88,27 +88,33 @@ export const HeroSection = () => {
           <Image src={memojiImage} alt="memoji" className="size-[130px]" />
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center space-x-2 rounded-full">
             {/* Green-dot animation */}
-            <div className="bg-green-500 size-2.5 rounded-full relative">
-              <div className="bg-green-400 rounded-full animate-ping-large absolute inset-0"></div>
+            <div className="bg-[#9ef01a] size-2.5 rounded-full relative">
+              <div className="bg-[#9ef01a]/98 rounded-full animate-ping-large absolute inset-0"></div>
             </div>
             {/* Green-dot animation */}
 
-            <div className="text-sm font-medium font-serif tracking-wide">
+            <div className="text-sm font-serif tracking-wide md:tracking-wider">
               Aspiring Software Engineer
             </div>
           </div>
         </div>
-        <div className="max-w-[1024px] mx-auto">
-          <h1 className={`${spaceGrotesk.className} font-black text-3xl md:text-5xl text-center mt-8 tracking-wide`}>
+        <div className="w-full md:max-w-4xl mx-auto">
+          <h1
+            className={`${spaceGrotesk.className} font-black text-3xl md:text-5xl text-center mt-8 tracking-wide`}
+          >
             Building things for fun
           </h1>
-          <p className={`${spaceGrotesk.className} mt-4 md:text-lg text-center px-3 text-white/60 tracking-wider`}>
-            Hi, I'm Chirantan Biswas - a 3rd-year Jadavpur University student with a growing obsession for web development and creating things that live on the internet...
+          <p
+            className={`${spaceGrotesk.className} mt-4 md:text-lg text-center px-3 text-white/60 tracking-wider`}
+          >
+            Hi, I'm Chirantan Biswas - a 3rd-year Jadavpur University student
+            with a growing obsession for web development and creating things
+            that live on the internet...
           </p>
         </div>
 
         {/* Scroll button Indicator */}
-        <div className="fixed opacity-0 md:opacity-[1] md:bottom-4 md:right-4 flex items-center justify-center">
+        <div className="fixed hidden md:block md:bottom-4 md:right-4">
           <RiScrollToBottomLine className="text-4xl transition duration-300 absolute inset-0 text-emerald-300 blur-md animate-bounce" />
           <RiScrollToBottomLine className="text-4xl transition duration-300 relative animate-bounce z-0" />
         </div>

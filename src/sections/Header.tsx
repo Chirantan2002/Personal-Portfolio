@@ -1,4 +1,10 @@
 "use client";
+import { Space_Grotesk } from "next/font/google";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 const sections = ["Home", "Projects", "About", "Contact"];
 
@@ -16,16 +22,18 @@ export const Header = () => {
 
   return (
     <div className="flex justify-center items-center fixed w-full top-3 z-30">
-      <nav className="flex gap-1 p-0.5 border border-white/15 rounded-full backdrop-blur-sm bg-inherit transition duration-400 ease-in-out bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40">
-        {sections.map((section, index) => (
-          <a
-            key={index}
-            onClick={() => scrollToSection(section)}
-            className="nav-item hover:bg-white hover:bg-shadow-md  text-white/90 hover:text-slate-900 font-bold text-sm md:text-md md:uppercase cursor-pointer sm:tracking-tighter md:tracking-wide"
-          >
-            {section}
-          </a>
-        ))}
+      <nav className="flex items-center py-1 px-2 md:px-8 md:py-2 drop-shadow-md drop-shadow-gray-900/80 border border-white/15 rounded-lg backdrop-blur bg-inherit transition-all ease-in-out bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40">
+        <div className="md:space-x-4">
+          {sections.map((section, index) => (
+            <a
+              key={index}
+              onClick={() => scrollToSection(section)}
+              className={`${spaceGrotesk.className} nav-item hover:bg-white  text-white/90 hover:text-slate-900 font-semibold text-xs md:text-md uppercase cursor-pointer tracking-wide md:tracking-wider rounded-md`}
+            >
+              {section}
+            </a>
+          ))}
+        </div>
       </nav>
     </div>
   );

@@ -1,9 +1,17 @@
-"use client";
+// "use client";
 import React from "react";
 import StarIcon from "@/assets/icons/star.svg";
 import { motion, MotionProps } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-// import {}
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: ["900"],
+  subsets: ["latin"],
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
+  style: "normal",
+});
 
 const ANIMATION_DURATION = 200;
 
@@ -47,15 +55,15 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
             {tapeWords.map((word, idx) => (
               <div
                 key={`${word}-${idx}`}
-                className="inline-flex space-x-1 items-center justify-center"
+                className={`${montserrat.className} inline-flex space-x-1 items-center justify-center`}
               >
                 <span
-                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                  className={`text-white/20 uppercase font-black text-5xl 
                     `}
                 >
                   {word}
                 </span>
-                <StarIcon className="size-8 text-white/20 " />
+                <StarIcon className="size-12 text-white/20 " />
               </div>
             ))}
           </motion.div>
@@ -66,15 +74,15 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
             {tapeWords.map((word, idx) => (
               <div
                 key={`${word}-${idx}`}
-                className="inline-flex space-x-1 items-center justify-center"
+                className={`${montserrat.className} inline-flex space-x-1 items-center justify-center`}
               >
                 <span
-                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                  className={`text-white/20 uppercase font-black text-5xl 
                     `}
                 >
                   {word}
                 </span>
-                <StarIcon className="size-8 text-white/20 " />
+                <StarIcon className="size-12 text-white/20 " />
               </div>
             ))}
           </motion.div>
@@ -96,15 +104,15 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
             {tapeWords.map((word, idx) => (
               <div
                 key={`${word}-${idx}`}
-                className="inline-flex space-x-1 items-center justify-center"
+                className={`${montserrat.className} inline-flex space-x-1 items-center justify-center`}
               >
                 <span
-                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                  className={`text-white/20 uppercase font-black text-5xl 
                     `}
                 >
                   {word}
                 </span>
-                <StarIcon className="size-8 text-white/20 " />
+                <StarIcon className="size-12 text-white/20 " />
               </div>
             ))}
           </motion.div>
@@ -121,15 +129,15 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
             {tapeWords.map((word, idx) => (
               <div
                 key={`${word}-${idx}`}
-                className="inline-flex space-x-1 items-center justify-center"
+                className={`${montserrat.className} inline-flex space-x-1 items-center justify-center`}
               >
                 <span
-                  className={`text-white/20 uppercase sekuya-regular text-5xl 
+                  className={`text-white/20 uppercase font-black text-5xl 
                     `}
                 >
                   {word}
                 </span>
-                <StarIcon className="size-8 text-white/20 " />
+                <StarIcon className="size-12 text-white/20 " />
               </div>
             ))}
           </motion.div>
