@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import MemojiSmile from "@/assets/images/memoji-smile.png";
-import { motion } from "framer-motion";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import emailjs from "emailjs-com";
 import { TapeAnimationComponent } from "@/components/TapeAnimation";
@@ -57,21 +55,11 @@ const MainContactSection = () => {
   const words = ["Contact Now", "Contact Now", "Contact Now"];
 
   return (
-    <div className="container mx-auto w-full">
+    <div className="container mx-auto w-full min-h-screen">
       <div className="md:px-12">
         <div className="flex md:flex-row flex-col items-center justify-center rounded-2xl overflow-clip">
           {/* <div className="text-black absolute text-5xl font-black uppercase">Hello</div> */}
           <div className="hidden md:block">
-            {/* <motion.img
-              drag
-              dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-              dragElastic={0.3}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              src={MemojiSmile.src}
-              alt="Memoji"
-              className="w-full max-w-[500px] h-auto drop-shadow-2xl drop-shadow-indigo-500/50 cursor:grab"
-            /> */}
             <OrbitSystem />
             <div className="overflow-clip">
               <div className="w-[700px]">

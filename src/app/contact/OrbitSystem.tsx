@@ -55,16 +55,16 @@ const OrbitSystem = () => {
           </div>
           {/* radius 100 Orbit */}
           <OrbitingIcon radius={100} angle={0} speed={30} direction="counter">
-            <FaSun className="size-4 opacity-[0.5]" />
+            <FaSun className="size-4 opacity-[0.5] text-emerald-300 animate-spin" />
           </OrbitingIcon>
           <OrbitingIcon radius={100} angle={90} speed={30} direction="counter">
-            <HiOutlineLightningBolt className="size-4 opacity-[0.5]" />
+            <HiOutlineLightningBolt className="size-4 opacity-[0.5] text-emerald-300 animate-spin" />
           </OrbitingIcon>
           <OrbitingIcon radius={100} angle={180} speed={30} direction="counter">
-            <HiOutlineLightningBolt className="size-4 opacity-[0.5]" />
+            <HiOutlineLightningBolt className="size-4 opacity-[0.5] text-emerald-300 animate-spin" />
           </OrbitingIcon>
           <OrbitingIcon radius={100} angle={270} speed={30} direction="counter">
-            <HiOutlineLightningBolt className="size-4 opacity-[0.5]" />
+            <HiOutlineLightningBolt className="size-4 opacity-[0.5] text-emerald-300 animate-spin" />
           </OrbitingIcon>
           {/* radius 100 Orbit */}
           {/* radius 150 Orbit */}
@@ -74,7 +74,7 @@ const OrbitSystem = () => {
             speed={30}
             direction="clockwise"
           >
-            <FaStar className="size-5 opacity-[0.5]" />
+            <FaStar className="size-5 opacity-[0.5] text-emerald-300" />
           </OrbitingIcon>
           <OrbitingIcon
             radius={150}
@@ -82,7 +82,7 @@ const OrbitSystem = () => {
             speed={30}
             direction="clockwise"
           >
-            <FaStar className="size-5 opacity-[0.5]" />
+            <FaStar className="size-5 opacity-[0.5] text-emerald-300" />
           </OrbitingIcon>
           <OrbitingIcon
             radius={150}
@@ -90,7 +90,7 @@ const OrbitSystem = () => {
             speed={30}
             direction="clockwise"
           >
-            <FaStar className="size-5 opacity-[0.5]" />
+            <FaStar className="size-5 opacity-[0.5] text-emerald-300" />
           </OrbitingIcon>
           <OrbitingIcon
             radius={150}
@@ -98,21 +98,21 @@ const OrbitSystem = () => {
             speed={30}
             direction="clockwise"
           >
-            <FaStar className="size-5 opacity-[0.5]" />
+            <FaStar className="size-5 opacity-[0.5] text-emerald-300" />
           </OrbitingIcon>
           {/* radius 150 Orbit */}
           {/* radius 200 Orbit */}
           <OrbitingIcon radius={200} angle={-20} speed={30} direction="counter">
-            <GoRocket className="size-6 opacity-[0.5] rotate-3" />
+            <GoRocket className="size-8 opacity-[0.5] rotate-3 text-emerald-300" />
           </OrbitingIcon>
           <OrbitingIcon radius={200} angle={70} speed={30} direction="counter">
-            <GoRocket className="size-6 opacity-[0.5] rotate-3" />
+            <GoRocket className="size-8 opacity-[0.5] rotate-3 text-emerald-300" />
           </OrbitingIcon>
           <OrbitingIcon radius={200} angle={160} speed={30} direction="counter">
-            <GoRocket className="size-6 opacity-[0.5] rotate-3" />
+            <GoRocket className="size-8 opacity-[0.5] rotate-3 text-emerald-300" />
           </OrbitingIcon>
           <OrbitingIcon radius={200} angle={250} speed={30} direction="counter">
-            <GoRocket className="size-6 opacity-[0.5] rotate-3" />
+            <GoRocket className="size-8 opacity-[0.5] rotate-3 text-emerald-300" />
           </OrbitingIcon>
           {/* radius 200 Orbit */}
         </div>
