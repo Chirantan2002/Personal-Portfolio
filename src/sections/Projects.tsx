@@ -7,6 +7,7 @@ import Image from "next/image";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import GrainImage from "@/assets/images/grain.jpg";
+import JustUsImage from "@/assets/images/just-us-image.png";
 import { useState } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TapeAnimationComponent } from "@/components/TapeAnimation";
@@ -20,7 +21,33 @@ const spaceGrotesk = Space_Grotesk({
 
 const portfolioProjects = [
   {
-    // company: "Acme Corp",
+    year: "2025",
+    title: "Caret - the dynamic code editor",
+    results: [
+      { title: "Created a robust code editor using Next.js" },
+      { title: "Used Piston-Api for efficient code execution" },
+      { title: "Snippets page is there for quick code sharing" },
+    ],
+    link: "https://caret-code-editor.vercel.app/",
+    github_link: "https://github.com/Chirantan2002/code-editor-webapp",
+    image: CaretPreviewImage,
+    category: "Saas",
+  },
+  {
+    year: "2025",
+    title: "Just Us - the private chat app",
+    results: [
+      { title: "Built with Next.js, Taliwind CSS, and Redis" },
+      { title: "Real-time chatting for two with end-to-end encryption" },
+      { title: "Self destruction feature with 10-min timer" },
+    ],
+    link: "https://just-us-coral.vercel.app",
+    github_link:
+      "https://github.com/Chirantan2002/Just-Us-the-private-chat-app",
+    image: JustUsImage,
+    category: "Saas",
+  },
+  {
     year: "2025",
     title: "Dark Saas Landing Page",
     results: [
@@ -34,7 +61,6 @@ const portfolioProjects = [
     category: "Frontend",
   },
   {
-    // company: "Innovative Co",
     year: "2025",
     title: "Lexify - Dynamic Language Translator",
     results: [
@@ -48,7 +74,6 @@ const portfolioProjects = [
     category: "Saas",
   },
   {
-    // company: "Quantum Dynamics",
     year: "2025",
     title: "Medical Report Analyzer",
     results: [
@@ -56,24 +81,9 @@ const portfolioProjects = [
       { title: "Flask API for efficient data processing" },
       { title: "Groq API for llama-3 model" },
     ],
-    // link: "https://youtu.be/Z7I5uSRHMHg",
     github_link: "https://github.com/Chirantan2002/Medical-Report-Analyzer",
     image: MedicalReportPage,
     category: "Ai",
-  },
-  {
-    // company: "Quantum Dynamics",
-    year: "2025",
-    title: "Caret - the dynamic code editor",
-    results: [
-      { title: "Created a robust code editor using Next.js" },
-      { title: "Used Piston-Api for efficient code execution" },
-      { title: "Snippets page is there for quick code sharing" },
-    ],
-    link: "https://caret-code-editor.vercel.app/",
-    github_link: "https://github.com/Chirantan2002/code-editor-webapp",
-    image: CaretPreviewImage,
-    category: "Saas",
   },
 ];
 
@@ -158,10 +168,10 @@ export const ProjectSection = () => {
               </h3>
               <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
               <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                {project.results.map((result) => (
+                {project.results.map((result, index) => (
                   <li
                     className={`${spaceGrotesk.className} flex space-x-2 text-sm md:text-base text-white/50`}
-                    key={result.title}
+                    key={index}
                   >
                     <CheckCircleIcon className="size-5 md:size-6" />
                     <span>{result.title}</span>
@@ -187,7 +197,7 @@ export const ProjectSection = () => {
               <Image
                 src={project.image}
                 alt={project.title}
-                className="mt-8 -mb-4 md:mb-0"
+                className="mt-8 -mb-4 md:mb-0 object-cover rounded-tl-lg rounded-tr-lg"
               />
             </div>
           ))}
