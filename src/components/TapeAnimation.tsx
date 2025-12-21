@@ -46,7 +46,7 @@ export const TapeAnimationComponent: React.FC<TapeAnimationProps> = ({
       <div className="container overflow-x-clip -mx-1">
         {/* Forward Tape of Words Begins */}
         <div
-          className={`flex [mask-image:linear-gradient(to_right,transparent,black_30%,black_90%,transparent)]`}
+          className={`flex [mask-image:linear-gradient(to_right,transparent,black_30%,black_70%,transparent)]`}
         >
           <motion.div
             {...animation}
