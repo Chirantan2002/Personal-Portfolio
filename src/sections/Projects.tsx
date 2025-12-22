@@ -178,18 +178,30 @@ export const ProjectSection = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col md:flex-row space-x-4 mt-5">
+              <div className="flex items-center justify-center md:justify-between flex-col md:flex-row space-x-4 mt-5">
                 {project.link && (
-                  <a target="_blank" href={project.link}>
-                    <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl font-semibold inline-flex items-center justify-center space-x-2 mt-4 md:p-4 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out">
-                      <span> Visit Live Site</span>
+                  <a
+                    target="_blank"
+                    href={project.link}
+                    className="w-full flex items-center justify-center"
+                  >
+                    <button
+                      className={`${spaceGrotesk.className} bg-white text-gray-950 h-12 w-full rounded-xl font-bold inline-flex items-center justify-center space-x-2 mt-4 ml-2 -mr-2 md:ml-0 md:mr-0 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out`}
+                    >
+                      <span className="text-sm">Live Demo</span>
                       <ArrowUpRightIcon className="size-5" />
                     </button>
                   </a>
                 )}
-                <a target="_blank" href={project.github_link}>
-                  <button className="bg-white text-gray-950 h-12 w-full md:w-auto rounded-xl font-semibold inline-flex items-center justify-center space-x-2 mt-4 md:p-4 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out">
-                    <span>Github</span>
+                <a
+                  target="_blank"
+                  href={project.github_link}
+                  className="w-full flex items-center justify-center"
+                >
+                  <button
+                    className={`${spaceGrotesk.className} bg-white text-gray-950 h-12 w-full rounded-xl font-bold inline-flex items-center justify-center space-x-2 mt-4 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out`}
+                  >
+                    <span className="text-sm">Github Repo</span>
                     <ArrowUpRightIcon className="size-5" />
                   </button>
                 </a>
