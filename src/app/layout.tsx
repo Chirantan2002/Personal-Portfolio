@@ -4,6 +4,7 @@ import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import { cn } from "@/lib/utils";
 import { fontMonaSans } from "@/assets/Fonts";
+import LenisProvider from "@/providers/LenisProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({
@@ -34,7 +35,7 @@ export default function RootLayout({
           )
         )}
       >
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );

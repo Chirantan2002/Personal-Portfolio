@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
@@ -123,7 +124,7 @@ export const HeroSection = () => {
         <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 mt-8 mx-auto">
           <div className="gap-4 flex flex-col md:flex-row justify-center items-center">
             <button
-              className="inline-flex items-center space-x-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer transition duration-300 tracking-wide font-semibold bg-white/5 hover:bg-white/10"
+              className="inline-flex items-center space-x-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer transition duration-300 bg-inherit bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40 backdrop-blur hover:bg-white/15 drop-shadow-md drop-shadow-gray-900/80"
               onClick={() => {
                 const ele = document.getElementById("Projects");
                 if (ele) {
@@ -135,7 +136,9 @@ export const HeroSection = () => {
                 }
               }}
             >
-              <span>Explore my work</span>
+              <span className="tracking-wide font-semibold">
+                Explore my work
+              </span>
               <FaArrowDown />
             </button>
             <button

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Space_Grotesk } from "next/font/google";
@@ -227,4 +227,4 @@ const StatsSection = () => {
   );
 };
 
-export default StatsSection;
+export default memo(StatsSection);
