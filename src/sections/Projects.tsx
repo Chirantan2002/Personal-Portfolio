@@ -1,4 +1,5 @@
 "use client";
+import { motion, useInView } from "framer-motion";
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import LexifyImage from "@/assets/images/Lexify-landing-page.png";
 import MedicalReportPage from "@/assets/images/Medical-Report-Analyzer-App.png";
@@ -8,7 +9,7 @@ import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import GrainImage from "@/assets/images/grain.jpg";
 import JustUsImage from "@/assets/images/just-us-image.png";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TapeAnimationComponent } from "@/components/TapeAnimation";
 import { FaWrench } from "react-icons/fa";
@@ -94,30 +95,134 @@ const categories = [
   ...Array.from(new Set(portfolioProjects.map((project) => project.category))),
 ];
 
+const AnimatedProjectCard = ({
+  project,
+  index,
+}: {
+  project: (typeof portfolioProjects)[0];
+  index: number;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{
+        duration: 0.6,
+        delay: index % 2 === 0 ? 0 : 0.15, // stagger left/right columns
+        ease: [0.25, 0.1, 0.25, 1],
+      }}
+    >
+      <div
+        className="absolute inset-0 -z-10 opacity-5"
+        style={{
+          backgroundImage: `url(${GrainImage.src})`,
+        }}
+      ></div>
+      <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase space-x-2 tracking-widest text-sm text-transparent bg-clip-text items-center">
+        {/* <span>{project.company}</span> */}
+        <span className="text-white/50 border-2 border-gray-400 rounded-full p-1">
+          <FaWrench className="size-2 md:size-4" />
+        </span>
+        <span className={`${spaceGrotesk.className} text-sm md:text-lg`}>
+          {project.year}
+        </span>
+      </div>
+      <h3
+        className={`${spaceGrotesk.className} font-semibold text-2xl mt-2 md:mt-5 md:text-4xl`}
+      >
+        {project.title}
+      </h3>
+      <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
+      <ul className="flex flex-col gap-4 mt-4 md:mt-5">
+        {project.results.map((result, index) => (
+          <li
+            className={`${spaceGrotesk.className} flex space-x-2 text-sm md:text-base text-white/50`}
+            key={index}
+          >
+            <CheckCircleIcon className="size-5 md:size-6" />
+            <span>{result.title}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="flex items-center justify-center md:justify-between flex-col md:flex-row space-x-4 mt-5">
+        {project.link && (
+          <a
+            target="_blank"
+            href={project.link}
+            className="w-full flex items-center justify-center"
+          >
+            <button
+              className={`${spaceGrotesk.className} bg-white text-gray-950 h-12 w-full rounded-xl font-bold inline-flex items-center justify-center space-x-2 mt-4 ml-2 -mr-2 md:ml-0 md:mr-0 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out`}
+            >
+              <span className="text-sm">Live Demo</span>
+              <ArrowUpRightIcon className="size-5" />
+            </button>
+          </a>
+        )}
+        <a
+          target="_blank"
+          href={project.github_link}
+          className="w-full flex items-center justify-center"
+        >
+          <button
+            className={`${spaceGrotesk.className} bg-white text-gray-950 h-12 w-full rounded-xl font-bold inline-flex items-center justify-center space-x-2 mt-4 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out`}
+          >
+            <span className="text-sm">Github Repo</span>
+            <ArrowUpRightIcon className="size-5" />
+          </button>
+        </a>
+      </div>
+      <Image
+        src={project.image}
+        alt={project.title}
+        className="mt-8 -mb-4 md:mb-0 object-cover rounded-tl-lg rounded-tr-lg"
+      />
+    </motion.div>
+  );
+};
+
 export const ProjectSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const headerRef = useRef(null);
+  const headerInView = useInView(headerRef, { once: true });
 
   const filteredProjects =
     selectedCategory === "All"
       ? portfolioProjects
       : portfolioProjects.filter(
-          (project) => project.category === selectedCategory
+          (project) => project.category === selectedCategory,
         );
 
   return (
     <section className="pb-16 lg:py-24 pt-16 md:pt-24" id="Projects">
       <div className="container mx-auto">
-        <SectionHeader
-          eyebrow="Putting skills into action"
-          title="Featured Projects"
-          about="See how I transformed ideas into engaging projects"
-        />
+        <motion.div
+          ref={headerRef}
+          initial={{ opacity: 0, y: 30 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          <SectionHeader
+            eyebrow="Putting skills into action"
+            title="Featured Projects"
+            about="See how I transformed ideas into engaging projects"
+          />
+        </motion.div>
         {/* Tape Animation With Words */}
         <TapeAnimationComponent words={tapeWords} />
         {/* Tape Animation With Words Ends*/}
 
         {/* Categories Buttons */}
-        <div className="flex flex-wrap space-x-5 justify-center mt-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={headerInView ? { opacity: 1 } : {}}
+          transition={{ staggerChildren: 0.08, delayChildren: 0.3 }}
+          className="flex flex-wrap space-x-5 justify-center mt-8"
+        >
           {categories.map((category, index) => (
             <button
               type="button"
@@ -134,82 +239,20 @@ export const ProjectSection = () => {
               {category}
             </button>
           ))}
-        </div>
+        </motion.div>
         {/* Categories Buttons Ends*/}
 
         {/* Projects One by One Begins*/}
         <div className="grid grid-cols-1 px-6 justify-items-center md:grid-cols-2 lg:grid-cols-2 gap-16 mt-10 md:gap-20 md:mt-20 relative z-0">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, i) => (
             <div
               key={project.title}
               className="bg-gray-800 rounded-3xl relative after:content-[''] after:absolute after:inset-0 z-0 after:z-10 overflow-hidden after:outline-2  after:-outline-offset-2 after:outline-white/20 after:rounded-3xl px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none"
             >
-              <div
-                className="absolute inset-0 -z-10 opacity-5"
-                style={{
-                  backgroundImage: `url(${GrainImage.src})`,
-                }}
-              ></div>
-              <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex font-bold uppercase space-x-2 tracking-widest text-sm text-transparent bg-clip-text items-center">
-                {/* <span>{project.company}</span> */}
-                <span className="text-white/50 border-2 border-gray-400 rounded-full p-1">
-                  <FaWrench className="size-2 md:size-4" />
-                </span>
-                <span
-                  className={`${spaceGrotesk.className} text-sm md:text-lg`}
-                >
-                  {project.year}
-                </span>
-              </div>
-              <h3
-                className={`${spaceGrotesk.className} font-semibold text-2xl mt-2 md:mt-5 md:text-4xl`}
-              >
-                {project.title}
-              </h3>
-              <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-              <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                {project.results.map((result, index) => (
-                  <li
-                    className={`${spaceGrotesk.className} flex space-x-2 text-sm md:text-base text-white/50`}
-                    key={index}
-                  >
-                    <CheckCircleIcon className="size-5 md:size-6" />
-                    <span>{result.title}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="flex items-center justify-center md:justify-between flex-col md:flex-row space-x-4 mt-5">
-                {project.link && (
-                  <a
-                    target="_blank"
-                    href={project.link}
-                    className="w-full flex items-center justify-center"
-                  >
-                    <button
-                      className={`${spaceGrotesk.className} bg-white text-gray-950 h-12 w-full rounded-xl font-bold inline-flex items-center justify-center space-x-2 mt-4 ml-2 -mr-2 md:ml-0 md:mr-0 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out`}
-                    >
-                      <span className="text-sm">Live Demo</span>
-                      <ArrowUpRightIcon className="size-5" />
-                    </button>
-                  </a>
-                )}
-                <a
-                  target="_blank"
-                  href={project.github_link}
-                  className="w-full flex items-center justify-center"
-                >
-                  <button
-                    className={`${spaceGrotesk.className} bg-white text-gray-950 h-12 w-full rounded-xl font-bold inline-flex items-center justify-center space-x-2 mt-4 cursor-pointer hover:bg-emerald-400 transition duration-200 ease-in-out`}
-                  >
-                    <span className="text-sm">Github Repo</span>
-                    <ArrowUpRightIcon className="size-5" />
-                  </button>
-                </a>
-              </div>
-              <Image
-                src={project.image}
-                alt={project.title}
-                className="mt-8 -mb-4 md:mb-0 object-cover rounded-tl-lg rounded-tr-lg"
+              <AnimatedProjectCard
+                key={project.title}
+                project={project}
+                index={i}
               />
             </div>
           ))}

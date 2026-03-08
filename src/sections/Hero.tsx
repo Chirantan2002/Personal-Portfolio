@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import memojiImage from "@/assets/images/memoji-computer.png";
 import Image from "next/image";
 import { FaArrowDown } from "react-icons/fa";
@@ -15,6 +15,7 @@ import { FiMoon } from "react-icons/fi";
 import { RiMeteorLine } from "react-icons/ri";
 import { FaRegHeart } from "react-icons/fa";
 import { Space_Grotesk } from "next/font/google";
+import { motion, useInView } from "framer-motion";
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
@@ -22,6 +23,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const HeroSection = () => {
+  const headerRef = useRef(null);
+  const headerInView = useInView(headerRef, { once: true });
+
   return (
     <div
       className="py-28 md:py-40 lg:py-52 relative z-0 overflow-x-clip [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
@@ -85,76 +89,82 @@ export const HeroSection = () => {
 
       {/* Main content starts from here */}
       <div className="container mx-auto">
-        <div className="flex flex-col items-center">
-          <Image src={memojiImage} alt="memoji" className="size-[130px]" />
-          <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center space-x-2 rounded-full">
-            {/* Green-dot animation */}
-            <div className="bg-[#9ef01a] size-2.5 rounded-full relative">
-              <div className="bg-[#9ef01a]/98 rounded-full animate-ping-large absolute inset-0"></div>
-            </div>
-            {/* Green-dot animation */}
+        <motion.div
+          ref={headerRef}
+          initial={{ opacity: 0, y: 30 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="flex flex-col items-center">
+            <Image src={memojiImage} alt="memoji" className="size-[130px]" />
+            <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center space-x-2 rounded-full">
+              {/* Green-dot animation */}
+              <div className="bg-[#9ef01a] size-2.5 rounded-full relative">
+                <div className="bg-[#9ef01a]/98 rounded-full animate-ping-large absolute inset-0"></div>
+              </div>
+              {/* Green-dot animation */}
 
-            <div className="text-sm font-serif tracking-wide md:tracking-wider">
-              Aspiring Software Engineer
+              <div className="text-sm font-serif tracking-wide md:tracking-wider">
+                Full Stack Developer
+              </div>
             </div>
           </div>
-        </div>
-        <div className="w-full md:max-w-4xl mx-auto">
-          <h1
-            className={`${spaceGrotesk.className} font-black text-3xl md:text-5xl text-center mt-8 tracking-wide`}
-          >
-            Building things for fun
-          </h1>
-          <p
-            className={`${spaceGrotesk.className} mt-4 md:text-lg text-center px-3 text-white/60 tracking-wider`}
-          >
-            Hi, I'm Chirantan Biswas - a 3rd-year Jadavpur University student
-            with a growing obsession for web development and creating things
-            that live on the internet...
-          </p>
-        </div>
-
-        {/* Scroll button Indicator */}
-        <div className="fixed hidden md:block md:bottom-4 md:right-4">
-          <RiScrollToBottomLine className="text-4xl transition duration-300 absolute inset-0 text-emerald-300 blur-md animate-bounce" />
-          <RiScrollToBottomLine className="text-4xl transition duration-300 relative animate-bounce z-0" />
-        </div>
-        {/* Scroll button Indicator */}
-
-        <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 mt-8 mx-auto">
-          <div className="gap-4 flex flex-col md:flex-row justify-center items-center">
-            <button
-              className="inline-flex items-center space-x-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer transition duration-300 bg-inherit bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40 backdrop-blur hover:bg-white/15 drop-shadow-md drop-shadow-gray-900/80"
-              onClick={() => {
-                const ele = document.getElementById("Projects");
-                if (ele) {
-                  ele.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                    inline: "nearest",
-                  });
-                }
-              }}
+          <div className="w-full md:max-w-4xl mx-auto">
+            <h1
+              className={`${spaceGrotesk.className} font-black text-3xl md:text-5xl text-center mt-8 tracking-wide`}
             >
-              <span className="tracking-wide font-semibold">
-                Explore my work
-              </span>
-              <FaArrowDown />
-            </button>
-            <button
-              className="inline-flex items-center space-x-2 border border-white/15 bg-white text-gray-950 px-6 h-12 rounded-xl cursor-pointer hover:bg-white/70 hover:text-black transition duration-300 tracking-wide font-semibold"
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = "./resume.pdf";
-                link.download = "Chirantan_Biswas_Resume.pdf";
-                link.click();
-              }}
+              Building things for fun
+            </h1>
+            <p
+              className={`${spaceGrotesk.className} mt-4 md:text-lg text-center px-3 text-white/60 tracking-wider`}
             >
-              <span>👋</span>
-              <span>Download Resume</span>
-            </button>
+              Hi, I'm Chirantan Biswas - a 3rd-year Jadavpur University student
+              who loves building fast, real-world products with modern web tech
+            </p>
           </div>
-        </div>
+
+          {/* Scroll button Indicator */}
+          <div className="fixed hidden md:block md:bottom-4 md:right-4">
+            <RiScrollToBottomLine className="text-4xl transition duration-300 absolute inset-0 text-emerald-300 blur-md animate-bounce" />
+            <RiScrollToBottomLine className="text-4xl transition duration-300 relative animate-bounce z-0" />
+          </div>
+          {/* Scroll button Indicator */}
+
+          <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 mt-8 mx-auto">
+            <div className="gap-4 flex flex-col md:flex-row justify-center items-center">
+              <button
+                className="inline-flex items-center space-x-2 border border-white/15 px-6 h-12 rounded-xl cursor-pointer transition duration-300 bg-inherit bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40 backdrop-blur hover:bg-white/15 drop-shadow-md drop-shadow-gray-900/80"
+                onClick={() => {
+                  const ele = document.getElementById("Projects");
+                  if (ele) {
+                    ele.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                      inline: "nearest",
+                    });
+                  }
+                }}
+              >
+                <span className="tracking-wide font-semibold">
+                  Explore my work
+                </span>
+                <FaArrowDown />
+              </button>
+              <button
+                className="inline-flex items-center space-x-2 border border-white/15 bg-white text-gray-950 px-6 h-12 rounded-xl cursor-pointer hover:bg-white/70 hover:text-black transition duration-300 tracking-wide font-semibold"
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "./resume.pdf";
+                  link.download = "Chirantan_Biswas_Resume.pdf";
+                  link.click();
+                }}
+              >
+                <span>👋</span>
+                <span>Download Resume</span>
+              </button>
+            </div>
+          </div>
+        </motion.div>
       </div>
       {/* Main content ends here */}
     </div>
