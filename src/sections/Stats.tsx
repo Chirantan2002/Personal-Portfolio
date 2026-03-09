@@ -13,7 +13,6 @@ import {
   LeetcodeProfile,
   LeetcodeSolved,
 } from "@/lib/types";
-import { motion, useInView } from "framer-motion";
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
@@ -28,63 +27,81 @@ const StatsSection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const headerRef = useRef(null);
-  const headerInView = useInView(headerRef, { once: true });
-
   useEffect(() => {
     const fetchData = async () => {
       const CACHE_KEY = "leetcode_data";
       const CACHE_DURATION = 30 * 60 * 1000;
 
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { data, timestamp } = JSON.parse(cached);
-        const isExpired = Date.now() - timestamp > CACHE_DURATION;
+      setLoading(true);
+      setError(null);
 
-        if (!isExpired) {
-          // USE CACHE, SKIP FETCH
-          let rawProfile = data.profile ?? null;
-          if (rawProfile) {
-            rawProfile.ranking =
-              rawProfile.ranking ??
-              rawProfile.userRanking ??
-              rawProfile.matchedUserStats?.userRanking ??
-              rawProfile.matchedUserStats?.ranking ??
-              rawProfile.matchedUserStats?.rating;
+      const cached = localStorage.getItem(CACHE_KEY);
+
+      if (cached) {
+        try {
+          const { data, timestamp } = JSON.parse(cached);
+          const isExpired = Date.now() - timestamp > CACHE_DURATION;
+
+          if (!isExpired) {
+            // USE CACHE, SKIP FETCH
+            const rawProfile = data.profile
+              ? {
+                  ...data.profile,
+                  ranking:
+                    data.profile.ranking ??
+                    data.profile.userRanking ??
+                    data.profile.matchedUserStats?.userRanking ??
+                    data.profile.matchedUserStats?.ranking ??
+                    data.profile.matchedUserStats?.rating,
+                }
+              : null;
+
+            setProfile(rawProfile);
+            setBadges(data.badges ?? null);
+            setSolved(data.solved ?? null);
+            setContests(data.contest ?? null);
+
+            setLoading(false); // IMPORTANT FIX
+            return; // ← exit early, no API call
           }
-          setProfile(rawProfile);
-          setBadges(data.badges ?? null);
-          setSolved(data.solved ?? null);
-          setContests(data.contest ?? null);
-          return; // ← exit early, no API call
+        } catch {
+          localStorage.removeItem(CACHE_KEY);
         }
       }
 
       try {
-        setLoading(true);
-        setError(null);
-        // console.log("fetching from /api/leetcode...");
+        // ---- FETCH API ----
         const res = await fetch("/api/leetcode");
         if (!res.ok) {
           if (res.status === 429)
             throw new Error("Rate limited by upstream API (429)");
           throw new Error(`Failed to fetch: ${res.status}`);
         }
+
+        // Initialize the data as JSON
         const data = await res.json();
-        // console.log("raw /api/leetcode response:", data);
+
+        // ---- SAVE CACHE ----
+        localStorage.setItem(
+          CACHE_KEY,
+          JSON.stringify({
+            data,
+            timestamp: Date.now(),
+          }),
+        );
 
         // normalize profile — handle nested shapes some APIs use
-        let rawProfile = data.profile ?? null;
-
-        if (rawProfile) {
-          // common alternate locations for ranking
-          rawProfile.ranking =
-            rawProfile.ranking ??
-            rawProfile.userRanking ??
-            rawProfile.matchedUserStats?.userRanking ??
-            rawProfile.matchedUserStats?.ranking ??
-            rawProfile.matchedUserStats?.rating;
-        }
+        const rawProfile = data.profile
+          ? {
+              ...data.profile,
+              ranking:
+                data.profile.ranking ??
+                data.profile.userRanking ??
+                data.profile.matchedUserStats?.userRanking ??
+                data.profile.matchedUserStats?.ranking ??
+                data.profile.matchedUserStats?.rating,
+            }
+          : null;
 
         setProfile(rawProfile);
         setBadges(data.badges ?? null);
@@ -97,7 +114,6 @@ const StatsSection = () => {
       }
     };
 
-    // remove the early log of profile here; it will always be null before fetch
     fetchData();
   }, []);
 
@@ -107,12 +123,7 @@ const StatsSection = () => {
 
   return (
     <div className={`${spaceGrotesk.className} container mx-auto px-4 my-16`}>
-      <motion.div
-        ref={headerRef}
-        initial={{ opacity: 0, y: 30 }}
-        animate={headerInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-      >
+      <div>
         <SectionHeader
           eyebrow="Stats that represent me"
           title="Problem Solving Snapshot"
@@ -260,7 +271,7 @@ const StatsSection = () => {
             </section>
           </Card>
         </main>
-      </motion.div>
+      </div>
     </div>
   );
 };

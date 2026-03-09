@@ -1,4 +1,5 @@
 "use client";
+
 import { Space_Grotesk } from "next/font/google";
 
 const spaceGrotesk = Space_Grotesk({
@@ -22,7 +23,7 @@ export const Header = () => {
 
   return (
     <div className="w-full fixed top-3 z-30 flex items-center justify-center">
-      <nav className="flex items-center justify-center p-1 drop-shadow-md drop-shadow-gray-900/80 border border-white/15 rounded-lg backdrop-blur bg-inherit transition-all duration-75 ease-in-out bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40">
+      <nav className="flex items-center justify-center p-1 drop-shadow-md drop-shadow-gray-900/80 border border-white/15 rounded-lg backdrop-blur bg-inherit transition-all ease-in-out bg-gradient-to-r from-[#0f172a]/40  to-[#334155]/40">
         <div className="flex items-center md:space-x-4">
           {sections.map((section, index) => (
             <a
