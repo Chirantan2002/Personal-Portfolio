@@ -144,7 +144,8 @@ export const Academics = () => {
                   <p
                     className={`${spaceGrotesk.className} text-[13.5px] text-stone-500 dark:text-stone-400`}
                   >
-                    Bachelor of Engineering in Information Technology — Jadavpur University
+                    Bachelor of Engineering in Information Technology — Jadavpur
+                    University
                   </p>
                 </div>
                 <ImageStrip images={JU_IMAGES} duration={120} />
